@@ -41,6 +41,7 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                     <th><center>Nro</center></th>
                                     <th><center>Móvil</center></th>
                                     <th><center>Modelo</center></th>
+                                    <th><center>Patente</center></th>
                                     <th><center>Hora Ingreso</center></th>
                                     <th><center>Hora Salida</center></th>
                                     <th><center>Fecha Ingreso </center></th>
@@ -64,6 +65,7 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                             <td style="background-color: #F6635C;"><center><?php echo $estadomovil_dato['nro_movil'];?></center></td>
                                         <?php }?>
                                         <td><?php echo $estadomovil_dato['modelo_movil'];?></td>
+                                        <td><?php echo $estadomovil_dato['patente_movil'];?></td>
                                         <td><?php echo $estadomovil_dato['entrada'];?></td>
                                         <td><?php echo $estadomovil_dato['salida'];?></td>
                                         <td><?php echo $estadomovil_dato['fecha'];?></td>
@@ -99,6 +101,12 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                                                         <div class="form-group">
                                                                             <label for="">Modelo</label>
                                                                             <input type="text" id="modelo_movil<?php echo $id_estadomovil;?>" class="form-control" value="<?php echo $estadomovil_dato['modelo_movil'];?>" disabled>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label for="">Patente</label>
+                                                                            <input type="text" id="patente_movil<?php echo $id_estadomovil;?>" class="form-control" value="<?php echo $estadomovil_dato['patente_movil'];?>" disabled>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-4">
@@ -146,13 +154,14 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                                                 $("#btn_confirmar<?php echo $id_estadomovil;?>").click(function(){
                                                                     var nro_movil = $("#nro_movil<?php echo $id_estadomovil;?>").val();
                                                                     var modelo_movil = $("#modelo_movil<?php echo $id_estadomovil;?>").val();
+                                                                    var patente_movil = $("#patente_movil<?php echo $id_estadomovil;?>").val();
                                                                     var entrada = $("#entrada<?php echo $id_estadomovil;?>").val();
                                                                     var salida = $("#salida<?php echo $id_estadomovil;?>").val();
                                                                     var fecha = $("#fecha<?php echo $id_estadomovil;?>").val();
                                                                     var estado = $("#estado<?php echo $id_estadomovil;?>").val();
                                                                     //alert(nro_movil + " " + modelo_movil + " " + entrada + " " + salida + " " + fecha + " " + estado); 
                                                                     var url = "../app/controllers/estadomoviles/update1.php";
-                                                                    $.get(url,{nro_movil:nro_movil,modelo_movil:modelo_movil,entrada:entrada,fecha:fecha,estado:estado},function(result){
+                                                                    $.get(url,{nro_movil:nro_movil,modelo_movil:modelo_movil,patente_movil:patente_movil,entrada:entrada,fecha:fecha,estado:estado},function(result){
                                                                         $("#respuesta_comenzar").html(result);
                                                                     });
                                                                 });

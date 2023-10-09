@@ -41,6 +41,7 @@ include ('../app/controllers/estadomoviles/listfueraserv.php');
                                     <th><center>Nro</center></th>
                                     <th><center>Móvil</center></th>
                                     <th><center>Modelo</center></th>
+                                    <th><center>Patente</center></th>
                                     <th><center>Salida</center></th>
                                     <th><center>Fecha</center></th>
                                 </tr>
@@ -61,6 +62,7 @@ include ('../app/controllers/estadomoviles/listfueraserv.php');
                                             <td style="background-color: #F6635C;"><center><?php echo $estadomovil_dato['nro_movil'];?></center></td>
                                         <?php }?>
                                         <td><?php echo $estadomovil_dato['modelo_movil'];?></td>
+                                        <td><?php echo $estadomovil_dato['patente_movil'];?></td>
                                         <td><?php echo $estadomovil_dato['salida'];?></td>
                                         <td><?php echo $estadomovil_dato['fecha'];?></td>
                                     </tr>

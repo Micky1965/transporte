@@ -2,7 +2,7 @@
 include('../app/config.php');
 include('../layout/sesion.php');
 include('../layout/parte1.php');
-include('../app/controllers/clientes/listado_clientes.php');
+include('../app/controllers/moviles/listado_moviles.php');
 
 ?>
 
@@ -13,59 +13,51 @@ include('../app/controllers/clientes/listado_clientes.php');
         <div class="container-fluid">
             <div class="row mb-0">
                 <div class="col-sm-12">
-                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-listacli">
-                        <i class="fas fa-male"></i> Buscar Cliente
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-listamov">
+                        <i class="fas fa-car"></i> Buscar Móvil
                     </button>
-                    <!-- Modal para seleccionar cliente e insertarlo en los pedidos de móviles -->
-                    <div class="modal fade" id="modal-listacli">
+                    <!-- Modal para seleccionar movil -->
+                    <div class="modal fade" id="modal-listamov">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title"><b>Clientes</b></h4>
+                                    <h4 class="modal-title"><b>Móviles</b></h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
                                     <div class="table table-responsive">
-                                        <table id="table_clientes" class="table table-bordered table-striped">
+                                        <table id="table_moviles" class="table table-bordered table-striped">
                                             <thead>
                                                 <tr>
                                                     <th><center>Seleccionar</center></th>
-                                                    <th><center>Dirección</center></th>
-                                                    <th><center>Apellido</center></th>
-                                                    <th><center>Celular</center></th>
-                                                    <th><center>Referencias</center></th>
+                                                    <th><center>Nro Móvil</center></th>
+                                                    <th><center>Modelo</center></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                foreach ($clientes_datos as $clientes_dato) {
-                                                    $id_cliente = $clientes_dato['id_cliente']; ?>
+                                                foreach ($moviles_datos as $moviles_dato) {
+                                                    $id_movil = $moviles_dato['id_movil']; ?>
                                                     <tr>
                                                         <td>
-                                                            <button class="btn btn-info btn-sm" id="btn_escoger<?php echo $id_cliente; ?>">
+                                                            <button class="btn btn-info btn-sm" id="btn_escoger<?php echo $id_movil; ?>">
                                                                 Escoger
                                                             </button>
                                                             <script>
-                                                                $('#btn_escoger<?php echo $id_cliente; ?>').click(function() {
+                                                                $('#btn_escoger<?php echo $id_movil; ?>').click(function() {
 
-                                                                    var direccion = "<?php echo $clientes_dato['direccion']; ?>";
-                                                                    $('#direccion').val(direccion);
-                                                                    var nombre = "<?php echo $clientes_dato['nombre']; ?>";
-                                                                    $('#nombre').val(nombre);
-                                                                    var celular = "<?php echo $clientes_dato['celular']; ?>";
-                                                                    $('#celular').val(celular);
-                                                                    var referencia = "<?php echo $clientes_dato['referencia']; ?>";
-                                                                    $('#referencia').val(referencia);
-                                                                    $('#modal-listacli').modal('toggle');
+                                                                    var nro_movil = "<?php echo $moviles_dato['nro']; ?>";
+                                                                    $('#nro_movil').val(nro_movil);
+                                                                    var modelo_movil = "<?php echo $moviles_dato['modelo']; ?>";
+                                                                    $('#modelo_movil').val(modelo_movil);
+                                                                    $('#modal-listamov').modal('toggle');
                                                                 });
                                                             </script>
                                                         </td>
-                                                        <td><?php echo $clientes_dato['direccion']; ?></td>
-                                                        <td><?php echo $clientes_dato['nombre']; ?></td>
-                                                        <td><?php echo $clientes_dato['celular']; ?></td>
-                                                        <td><?php echo $clientes_dato['referencia']; ?></td>
+                                                        <td><?php echo $moviles_dato['nro']; ?></td>
+                                                        <td><?php echo $moviles_dato['modelo']; ?></td>
                                                     </tr>
                                                 <?php
                                                 }
@@ -79,7 +71,7 @@ include('../app/controllers/clientes/listado_clientes.php');
                         </div>
                         <!-- /.modal-dialog -->
                     </div>
-                    <!-- /.modal fin seleccion de cliente  -->
+                    <!-- /.modal fin seleccion de moviles  -->
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -95,7 +87,7 @@ include('../app/controllers/clientes/listado_clientes.php');
                 <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Registrar Pedido de Móvil</h3>
+                            <h3 class="card-title">Ingresar a Estado de Móviles</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                                 </button>
@@ -106,48 +98,36 @@ include('../app/controllers/clientes/listado_clientes.php');
                         <div class="card-body" style="display: block;">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <form action="../app/controllers/pedidos/create.php" method="post">
+                                    <form action="../app/controllers/moviles/create.php" method="post">
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <label for="">Dirección <font color="red">*</font></label>
-                                                    <input type="text" name="direccion" class="form-control" id="direccion" required>
+                                                    <label for="">Nro Móvil</label>
+                                                    <input type="text" name="nro_movil" class="form-control" id="nro_movil" required>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <label for="">Apellido <font color="red">*</font></label>
-                                                    <input type="text" name="nombre" class="form-control" id="nombre" required>
+                                                    <label for="">Modelo</label>
+                                                    <input type="text" name="modelo_movil" class="form-control" id="modelo_movil" required>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <label for="">Celular</label>
-                                                    <input type="text" name="celular" class="form-control" id="celular">
+                                                    <label for="">Hora Ingreso</label>
+                                                    <input type="text" name="entrada" class="form-control" id="entrada">
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <label for="">Referencias</label>
-                                                    <input type="text" name="referencia" class="form-control" id="referencia">
+                                                    <label for="">Hora Salida</label>
+                                                    <input type="text" name="salida" class="form-control" id="salida">
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="">Destino</label>
-                                                    <input type="text" name="destino" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="">Móvil <font color="red">*</font></label>
-                                                    <input type="text" name="movil" class="form-control" id="movil" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="">Observaciones</label>
-                                                    <input type="text" name="observaciones" class="form-control">
+                                                    <label for="">Fecha Ingreso</label>
+                                                    <input type="date" name="fecha" class="form-control" id="fecha">
                                                 </div>
                                             </div>
                                         </div>
@@ -178,16 +158,16 @@ include('../app/controllers/clientes/listado_clientes.php');
 
 <script>
     $(function() {
-        $("#table_clientes").DataTable({
+        $("#table_moviles").DataTable({
             "pageLength": 3,
             "language": {
                 "emptyTable": "No hay información",
-                "info": "Mostrando _START_ a _END_ de _TOTAL_ clientes",
-                "infoEmpty": "Mostrando 0 a 0 de 0 clientes",
-                "infoFiltered": "(Filtrado de _MAX_ total clientes)",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ moviles",
+                "infoEmpty": "Mostrando 0 a 0 de 0 moviles",
+                "infoFiltered": "(Filtrado de _MAX_ total moviles)",
                 "infoPostFix": "",
                 "thousands": ",",
-                "lengthMenu": "Mostrar _MENU_ clientes",
+                "lengthMenu": "Mostrar _MENU_ moviles",
                 "loadingRecords": "Cargando...",
                 "processing": "Procesando...",
                 "search": "Buscador:",
@@ -203,6 +183,6 @@ include('../app/controllers/clientes/listado_clientes.php');
             "lengthChange": true,
             "autoWidth": false,
 
-        }).buttons().container().appendTo('#table_clientes_wrapper .col-md-6:eq(0)');
+        }).buttons().container().appendTo('#table_moviles_wrapper .col-md-6:eq(0)');
     });
 </script>
