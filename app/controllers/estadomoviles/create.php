@@ -5,11 +5,27 @@ include('../../config.php');
 $nro_movil = $_POST['nro_movil'];
 $modelo_movil = $_POST['modelo_movil'];
 $patente_movil = $_POST['patente_movil'];
+$patente_movil = strtoupper($patente_movil);
 $entrada = $_POST['entrada'];
 $salida = $_POST['salida'];
 $fecha = $_POST['fecha'];
 $movil = $_POST['movil'];
 $estado = 0;
+
+$sql = "SELECT * FROM tb_estadomovil WHERE patente_movil = '$patente_movil'";
+$query = $pdo->prepare($sql);
+$query->execute();
+$estadomovil = $query->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($estadomovil as $estmovil) {
+    $patente_estmovil_table = $estmovil['patente_movil'];
+}
+if (  (($patente_estmovil_table) == ($patente_movil))  ) {
+    session_start();
+    $_SESSION['mensaje'] = "Este Móvil Ya Está En Servicio";
+    $_SESSION['icono'] = "error";
+    header('Location: ' . $URL . '/estadomoviles/');
+    } else {
 
 $sentencia = $pdo->prepare("INSERT INTO tb_estadomovil
                           ( nro_movil, modelo_movil, patente_movil, entrada, salida, fecha, estado) 
@@ -25,6 +41,7 @@ $sentencia->bindParam('estado', $estado);
 
 $sentencia->execute();
 session_start();
-    $_SESSION['mensaje'] = "Ingresado con Éxito";
+    $_SESSION['mensaje'] = "El Móvil Comienza Su Servicio";
     $_SESSION['icono'] = "success";
-    header('Location: ' . $URL . '/estadomovil/');
+    header('Location: ' . $URL . '/estadomoviles/');
+}

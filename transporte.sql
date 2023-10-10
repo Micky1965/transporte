@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-10-2023 a las 22:54:42
+-- Tiempo de generación: 09-10-2023 a las 04:57:11
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -80,14 +80,25 @@ INSERT INTO `tb_clientes` (`id_cliente`, `nombre_cliente`, `celular_cliente`, `d
 
 CREATE TABLE `tb_estadomovil` (
   `id_estadomovil` int(11) NOT NULL,
-  `nro` int(11) NOT NULL,
+  `nro_movil` varchar(20) NOT NULL,
+  `modelo_movil` varchar(20) NOT NULL,
+  `patente_movil` varchar(20) NOT NULL,
   `entrada` time NOT NULL,
   `salida` time NOT NULL,
-  `modelo` varchar(20) NOT NULL,
-  `observ` varchar(250) NOT NULL,
   `fecha` date NOT NULL,
   `estado` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `tb_estadomovil`
+--
+
+INSERT INTO `tb_estadomovil` (`id_estadomovil`, `nro_movil`, `modelo_movil`, `patente_movil`, `entrada`, `salida`, `fecha`, `estado`) VALUES
+(8, '87', 'Etios', 'AC321FT', '22:08:34', '20:28:03', '2023-10-08', 1),
+(9, '12', 'Prisma', 'AC852LK', '20:18:32', '20:28:19', '2023-10-08', 0),
+(10, '56', '306', 'PST987', '20:42:05', '20:19:30', '2023-10-08', 1),
+(20, '44', 'Gol Trend', 'AA852MK', '20:23:24', '20:23:12', '2023-10-08', 1),
+(25, '71', 'Siena', 'NWT682', '23:02:25', '20:28:11', '2023-10-08', 1);
 
 -- --------------------------------------------------------
 
@@ -223,7 +234,8 @@ INSERT INTO `tb_localidades` (`id_localidad`, `nombre_localidad`, `distancia_loc
 (113, 'Vaqueros', 12, 2614, 2874),
 (114, 'Vespucio', 349, 70351, 77351),
 (115, 'Yatasto', 147, 29749, 32709),
-(118, 'Betania', 67, 13669, 15029);
+(118, 'Betania', 67, 13669, 15029),
+(131, 'Catamarca', 537, 108139, 118899);
 
 -- --------------------------------------------------------
 
@@ -234,28 +246,28 @@ INSERT INTO `tb_localidades` (`id_localidad`, `nombre_localidad`, `distancia_loc
 CREATE TABLE `tb_moviles` (
   `id_movil` int(11) NOT NULL,
   `marca_movil` varchar(30) NOT NULL,
-  `modelo_movil` varchar(30) NOT NULL,
+  `modelo_movil` varchar(20) NOT NULL,
   `anio_movil` int(11) DEFAULT NULL,
   `patente_movil` varchar(30) NOT NULL,
   `licencia_movil` int(11) DEFAULT NULL,
   `propietario_movil` varchar(100) DEFAULT NULL,
   `chofer1_movil` varchar(100) DEFAULT NULL,
   `chofer2_movil` varchar(100) NOT NULL,
-  `nro_movil` varchar(100) NOT NULL,
-  `incorporacion` date NOT NULL,
-  `entrada` time NOT NULL,
-  `salida` time NOT NULL,
-  `fecha` date NOT NULL,
-  `estado` int(11) NOT NULL DEFAULT 1
+  `nro_movil` varchar(20) NOT NULL,
+  `incorporacion` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `tb_moviles`
 --
 
-INSERT INTO `tb_moviles` (`id_movil`, `marca_movil`, `modelo_movil`, `anio_movil`, `patente_movil`, `licencia_movil`, `propietario_movil`, `chofer1_movil`, `chofer2_movil`, `nro_movil`, `incorporacion`, `entrada`, `salida`, `fecha`, `estado`) VALUES
-(6, 'Peugeot', '306', 2016, 'PS987MJ', 487, 'Gimena', 'Luna', 'Estela', '87', '2023-08-04', '00:00:00', '00:00:00', '0000-00-00', 1),
-(7, 'Toyota', 'Etios', 2019, 'AC321FT', 415, 'Ernesto Rojas', 'Jose', 'Paula', '15', '2023-09-29', '00:00:00', '00:00:00', '0000-00-00', 0);
+INSERT INTO `tb_moviles` (`id_movil`, `marca_movil`, `modelo_movil`, `anio_movil`, `patente_movil`, `licencia_movil`, `propietario_movil`, `chofer1_movil`, `chofer2_movil`, `nro_movil`, `incorporacion`) VALUES
+(3, 'Toyota', 'Etios', 2019, 'AC321FT', 487, 'Gimena', 'Luna', 'Alejandra', '87', '2023-10-05'),
+(4, 'Chevrolet', 'Prisma', 2020, 'AC852LK', 612, 'Ernesto Rojas', 'Jose', 'Analia', '12', '2023-09-26'),
+(5, 'Peugeot', '306', 2015, 'PST987', 256, 'Esther', '', '', '56', '2023-10-06'),
+(8, 'VolksWagen', 'Gol Trend', 2017, 'AA852MK', 544, 'Gonzalez', 'Mario', 'Analia', '44', '2023-10-07'),
+(9, 'Fiat', 'Siena', 2014, 'NWT682', 271, 'Contreras', 'Miguel', 'Eduardo', '71', '2023-03-08'),
+(10, 'VolksWagen', 'Voyage', 2020, 'AD789GH', 366, 'Enrique Araoz', 'Sin Chofer', 'Sin Chofer', '66', '2023-10-08');
 
 -- --------------------------------------------------------
 
@@ -367,7 +379,8 @@ CREATE TABLE `tb_usuarios` (
 INSERT INTO `tb_usuarios` (`id_user`, `nombre_user`, `nick_user`, `dni_user`, `celular_user`, `direccion_user`, `password_user`, `id_rol`) VALUES
 (3, 'siames', 'sisi', 30265598, '388456123', 'B° 23 de agosto', '123456', 2),
 (9, 'Miguel A. G.', 'micky', 18858994, '4985929794', 'Rio Negro 3158 - Inter', '123456', 1),
-(10, 'rotweiller', 'aaron', 37896521, '3874569874', 'Pasaje yapeyú 2580', '123456', 2);
+(10, 'rotweiller', 'aaron', 37896521, '3874569874', 'Pasaje yapeyú 2580', '123456', 2),
+(18, 'asdfg', 'admin', 12345, '54321', 'ñlkjh', 'asd123ñlk321', 1);
 
 --
 -- Índices para tablas volcadas
@@ -455,19 +468,19 @@ ALTER TABLE `tb_clientes`
 -- AUTO_INCREMENT de la tabla `tb_estadomovil`
 --
 ALTER TABLE `tb_estadomovil`
-  MODIFY `id_estadomovil` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_estadomovil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_localidades`
 --
 ALTER TABLE `tb_localidades`
-  MODIFY `id_localidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
+  MODIFY `id_localidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_moviles`
 --
 ALTER TABLE `tb_moviles`
-  MODIFY `id_movil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_movil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_pedidos`
@@ -497,7 +510,7 @@ ALTER TABLE `tb_tarifas`
 -- AUTO_INCREMENT de la tabla `tb_usuarios`
 --
 ALTER TABLE `tb_usuarios`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Restricciones para tablas volcadas

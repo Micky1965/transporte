@@ -72,11 +72,18 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                         <td>
                                             
                                             <center>
-                                                
-                                                <button class="btn btn-info" type="button" data-toggle="modal" 
+                                                <?php
+                                                if ($estadomovil_dato['estado'] == 1) {?>
+                                                    <button class="btn btn-danger" type="button" data-toggle="modal" 
+                                                        data-target="#modal2<?php echo $id_estadomovil;?>">Finalizar
+                                                    </button>
+                                                    
+                                                <?php
+                                                }else{ ?>
+                                                    <button class="btn btn-info" type="button" data-toggle="modal" 
                                                         data-target="#modal<?php echo $id_estadomovil;?>">Comenzar
-                                                </button>
-                                                
+                                                    </button>
+                                                <?php }?>
                                                 <!-- Button trigger modal -->
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="modal<?php echo $id_estadomovil;?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -173,15 +180,11 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                                         </div>
                                                     </div>
                                                     </div>
+                                                    
                                                     <!-- Aqui Termina las aciiones del boton de Comenzar servicio -->
-
+                                                                
                                                     <!-- Aqui comienza el boton de finalizar servicio -->
 
-                                                
-                                                    <button class="btn btn-secondary" type="button" data-toggle="modal" 
-                                                        data-target="#modal2<?php echo $id_estadomovil;?>">Finalizar
-                                                    </button>
-                                                
                                                 <!-- Button trigger modal -->
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="modal2<?php echo $id_estadomovil;?>" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
@@ -206,6 +209,12 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                                                         <div class="form-group">
                                                                             <label for="">Modelo</label>
                                                                             <input type="text" id="modelo_movil<?php echo $id_estadomovil;?>" class="form-control" value="<?php echo $estadomovil_dato['modelo_movil'];?>" disabled>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label for="">Patente</label>
+                                                                            <input type="text" id="patente_movil<?php echo $id_estadomovil;?>" class="form-control" value="<?php echo $estadomovil_dato['patente_movil'];?>" disabled>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-4">
@@ -241,13 +250,14 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                                                 $("#btn_confirmarf<?php echo $id_estadomovil;?>").click(function(){
                                                                     var nro_movil = $("#nro_movil<?php echo $id_estadomovil;?>").val();
                                                                     var modelo_movil = $("#modelo_movil<?php echo $id_estadomovil;?>").val();
+                                                                    var patente_movil = $("#patente_movil<?php echo $id_estadomovil;?>").val();
                                                                     var entrada = $("#entrada<?php echo $id_estadomovil;?>").val();
                                                                     var salida = $("#salida<?php echo $id_estadomovil;?>").val();
                                                                     var fecha = $("#fecha<?php echo $id_estadomovil;?>").val();
                                                                     var estado = $("#estado<?php echo $id_estadomovil;?>").val();
                                                                     //alert(nro_numero + " " + modelo_numero + " " + entrada + " " + salida + " " + fecha + " " + estado);
                                                                     var url = "../app/controllers/estadomoviles/update2.php";
-                                                                    $.get(url,{nro_movil:nro_movil,modelo_movil:modelo_movil,salida:salida,estado:estado},function(dato){
+                                                                    $.get(url,{nro_movil:nro_movil,modelo_movil:modelo_movil,patente_movil:patente_movil,salida:salida,estado:estado},function(dato){
                                                                         $("#respuesta_finalizar").html(dato);
                                                                     });
                                                                 });
@@ -281,6 +291,7 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-
+                                
 <?php include ('../layout/mensajes.php'); ?>
 <?php include ('../layout/parte2.php'); ?>
+                              

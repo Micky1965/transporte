@@ -42,6 +42,7 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                     <th><center>Nro</center></th>
                                     <th><center>Móvil</center></th>
                                     <th><center>Modelo</center></th>
+                                    <th><center>Patente</center></th>
                                     <th><center>Hora Ingreso</center></th>
                                     <th><center>Hora Salida</center></th>
                                     <th><center>Fecha</center></th>
@@ -58,12 +59,13 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                         <td><center><?php echo $contador = $contador + 1;?></center></td>
                                         <?php
                                         if ($estadomovil_dato['estado'] == 1) {?>
-                                            <td style="background-color: #90EE90;"><center><?php echo $estadomovil_dato['nro'];?></center></td>
+                                            <td style="background-color: #90EE90;"><center><?php echo $estadomovil_dato['nro_movil'];?></center></td>
                                         <?php
                                         }else{ ?>
-                                            <td style="background-color: #F6635C;"><center><?php echo $estadomovil_dato['nro'];?></center></td>
+                                            <td style="background-color: #F6635C;"><center><?php echo $estadomovil_dato['nro_movil'];?></center></td>
                                         <?php }?>
-                                        <td><?php echo $estadomovil_dato['modelo'];?></td>
+                                        <td><?php echo $estadomovil_dato['modelo_movil'];?></td>
+                                        <td><?php echo $estadomovil_dato['patente_movil'];?></td>
                                         <td><?php echo $estadomovil_dato['entrada'];?></td>
                                         <td><?php echo $estadomovil_dato['salida'];?></td>
                                         <td><?php echo $estadomovil_dato['fecha'];?></td>
@@ -123,8 +125,6 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                 orientation: 'landscape',
                 buttons: [
                 {
-                    extend: 'pdf'
-                }, {
                     extend: 'excel'
                 }, {
                     text: 'Imprimir',

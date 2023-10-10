@@ -3,6 +3,7 @@ include('../app/config.php');
 include('../layout/sesion.php');
 include('../layout/parte1.php');
 include('../app/controllers/moviles/listado_moviles.php');
+include('../app/controllers/estadomoviles/listado_estadomoviles.php');
 
 ?>
 
@@ -34,6 +35,7 @@ include('../app/controllers/moviles/listado_moviles.php');
                                                     <th><center>Seleccionar</center></th>
                                                     <th><center>Nro Móvil</center></th>
                                                     <th><center>Modelo</center></th>
+                                                    <th><center>Patente</center></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -52,12 +54,15 @@ include('../app/controllers/moviles/listado_moviles.php');
                                                                     $('#nro_movil').val(nro_movil);
                                                                     var modelo_movil = "<?php echo $moviles_dato['modelo']; ?>";
                                                                     $('#modelo_movil').val(modelo_movil);
+                                                                    var patente_movil = "<?php echo $moviles_dato['patente']; ?>";
+                                                                    $('#patente_movil').val(patente_movil);
                                                                     $('#modal-listamov').modal('toggle');
                                                                 });
                                                             </script>
                                                         </td>
                                                         <td><?php echo $moviles_dato['nro']; ?></td>
                                                         <td><?php echo $moviles_dato['modelo']; ?></td>
+                                                        <td><?php echo $moviles_dato['patente']; ?></td>
                                                     </tr>
                                                 <?php
                                                 }
@@ -92,13 +97,12 @@ include('../app/controllers/moviles/listado_moviles.php');
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                                 </button>
                             </div>
-
                         </div>
 
                         <div class="card-body" style="display: block;">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <form action="../app/controllers/moviles/create.php" method="post">
+                                    <form action="../app/controllers/estadomoviles/create.php" method="post">
                                         <div class="row">
                                             <div class="col-md-2">
                                                 <div class="form-group">
@@ -110,6 +114,12 @@ include('../app/controllers/moviles/listado_moviles.php');
                                                 <div class="form-group">
                                                     <label for="">Modelo</label>
                                                     <input type="text" name="modelo_movil" class="form-control" id="modelo_movil" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label for="">Patente</label>
+                                                    <input type="text" style="text-transform: uppercase;" name="patente_movil" class="form-control" id="patente_movil" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
@@ -134,7 +144,7 @@ include('../app/controllers/moviles/listado_moviles.php');
                                         <br>
                                         <div class="col">
                                             <div class="form-group">
-                                                <a href="index.php" class="btn btn-secondary">Cancelar</a>
+                                                <a href="../pedidos/" class="btn btn-secondary">Cancelar</a>
                                                 <button type="submit" class="btn btn-primary">Guardar</button>
                                             </div>
                                         </div>
@@ -158,7 +168,7 @@ include('../app/controllers/moviles/listado_moviles.php');
 
 <script>
     $(function() {
-        $("#table_moviles").DataTable({
+        $("#table_estadomovil").DataTable({
             "pageLength": 3,
             "language": {
                 "emptyTable": "No hay información",
@@ -183,6 +193,6 @@ include('../app/controllers/moviles/listado_moviles.php');
             "lengthChange": true,
             "autoWidth": false,
 
-        }).buttons().container().appendTo('#table_moviles_wrapper .col-md-6:eq(0)');
+        }).buttons().container().appendTo('#table_estadomovil_wrapper .col-md-6:eq(0)');
     });
 </script>
