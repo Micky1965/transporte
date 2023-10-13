@@ -116,7 +116,7 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                                                             <input type="text" id="patente_movil<?php echo $id_estadomovil;?>" class="form-control" value="<?php echo $estadomovil_dato['patente_movil'];?>" disabled>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-md-4">
+                                                                    <div class="col-md-3">
                                                                         <div class="form-group">
                                                                             <label for="">Hora Ingreso</label>
                                                                             <?php
@@ -125,15 +125,9 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                                                             <input type="text" id="entrada<?php echo $id_estadomovil;?>" class="form-control" value="<?php echo $fechaHora;?>" disabled>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-md-6">
+                                                                    <div class="col-md-4">
                                                                         <div class="form-group">
-                                                                            <label for="">Hora Salida</label>
-                                                                            <input type="text" id="salida<?php echo $id_estadomovil;?>" class="form-control" value="<?php echo $estadomovil_dato['salida'];?>" disabled>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <label for="">Fecha</label>
+                                                                            <label for="">Fecha Ingreso</label>
                                                                             <?php 
                                                                             $fecha = date('Y/m/d');
                                                                             $dia = date('d');
@@ -143,7 +137,7 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                                                             <input type="date" id="fecha<?php echo $id_estadomovil;?>" class="form-control" value="<?php echo $anio."-".$mes."-".$dia;?>" disabled>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-md-6">
+                                                                    <div class="col-md-5">
                                                                         <div class="form-group">
                                                                             <label for="">Estado</label>
                                                                             <select name="" id="estado<?php echo $id_estadomovil;?>" class="form-control">
@@ -163,10 +157,9 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                                                     var modelo_movil = $("#modelo_movil<?php echo $id_estadomovil;?>").val();
                                                                     var patente_movil = $("#patente_movil<?php echo $id_estadomovil;?>").val();
                                                                     var entrada = $("#entrada<?php echo $id_estadomovil;?>").val();
-                                                                    var salida = $("#salida<?php echo $id_estadomovil;?>").val();
                                                                     var fecha = $("#fecha<?php echo $id_estadomovil;?>").val();
                                                                     var estado = $("#estado<?php echo $id_estadomovil;?>").val();
-                                                                    //alert(nro_movil + " " + modelo_movil + " " + entrada + " " + salida + " " + fecha + " " + estado); 
+                                                                    //alert(nro_movil + " " + modelo_movil + " " + entrada + " " + fecha + " " + estado); 
                                                                     var url = "../app/controllers/estadomoviles/update1.php";
                                                                     $.get(url,{nro_movil:nro_movil,modelo_movil:modelo_movil,patente_movil:patente_movil,entrada:entrada,fecha:fecha,estado:estado},function(result){
                                                                         $("#respuesta_comenzar").html(result);
@@ -217,13 +210,13 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                                                             <input type="text" id="patente_movil<?php echo $id_estadomovil;?>" class="form-control" value="<?php echo $estadomovil_dato['patente_movil'];?>" disabled>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-md-4">
+                                                                    <div class="col-md-3">
                                                                         <div class="form-group">
                                                                             <label for="">Hora Ingreso</label>
                                                                             <input type="text" id="entrada<?php echo $id_estadomovil;?>" class="form-control" value="<?php echo $estadomovil_dato['entrada'];?>" disabled>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-md-6">
+                                                                    <div class="col-md-4">
                                                                         <div class="form-group">
                                                                             <label for="">Hora Salida</label>
                                                                             <?php
@@ -232,7 +225,7 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                                                             <input type="text" id="salida<?php echo $id_estadomovil;?>" class="form-control" value="<?php echo $fechaHora;?>" disabled>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-md-6">
+                                                                    <div class="col-md-5">
                                                                         <div class="form-group">
                                                                             <label for="">Estado</label>
                                                                             <select name="" id="estado<?php echo $id_estadomovil;?>" class="form-control">

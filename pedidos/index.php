@@ -27,7 +27,8 @@ include('../app/controllers/pedidos/listado_pedidos.php');
                                                                 <i class="fas fa-ban"></i><b> Fuera de Servicio</b></a>
                                     <a class="nav-link" href="../estadomoviles/index.php" style="color:#ffffff;">
                                                                 <i class="fas fa-car-side"></i><b> Estado de los Móviles</b></a>
-                                    
+                                    <div style="width: 90px"></div> 
+                                    <a href="vaciar.php" class="btn btn-danger">Vaciar Lista</a>
                                 </div>
                             </div>
                         </div>
@@ -47,8 +48,8 @@ include('../app/controllers/pedidos/listado_pedidos.php');
                 <div class="col-md-12">
 
                     <div class="card card-outline card-secondary">
-                        <div class="card-header">
-                            <h3 class="card-title"><a href="../reportes/viajeslist.php" class="link"><b>Listado Completo de Viajes</b></a></h3>
+                        <div class="card-header" style="display: flex;">
+                            <h3 class="card-title"><a href="../reportes/viajeslist.php" class="link"><b>Guardar el Listado de Viajes</b></a></h3>
                         </div>
 
                         <div class="card-body" style="display: block;">

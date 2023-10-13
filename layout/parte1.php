@@ -44,7 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link"><b> Hola <?php echo $nick_sesion; ?>, Bienvenido y buena jornada laboral !</b></a> 
+                    <span class="nav-link"><b> Hola <?php echo $nick_sesion; ?>, Bienvenido y buena jornada laboral !</b></span> 
                 </li>
             </ul>
 
@@ -117,7 +117,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <li class="nav-item">
                                         <a href="<?php echo $URL; ?>/pedidos/create.php" class="nav-link">
                                             <i class="nav-icon fas fa-phone"></i>
-                                            <p>Nuevo Pedido</p>
+                                            <p>Nuevo Viaje</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
@@ -209,7 +209,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <a href="#" class="nav-link active">
                                     <i class="nav-icon fas fa-car-side"></i>
                                     <p>
-                                        Estado de Móviles
+                                        Estado de los Móviles
+                                        <i class="right fas fa-angle-left"></i>
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
@@ -280,35 +281,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link active">
+                                <a href="<?php echo $URL; ?>/calculadora/precios.php" class="nav-link active">
                                     <i class="nav-icon fas fa-calculator"></i>
                                     <p>
                                         Calcular Precio Viaje
-                                        <i class="right fas fa-angle-left"></i>
                                     </p>
                                 </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="<?php echo $URL; ?>/calculadora/precios.php" class="nav-link">
-                                            <i class="nav-icon fas fa-comments-dollar"></i>
-                                            <p>Calcular Precios</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="<?php echo $URL; ?>/calculadora" class="nav-link">
-                                            <i class="nav-icon fas fa-dollar-sign"></i>
-                                            <p>Actualizar Tarifa</p>
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
-
-
+                                
                             <li class="nav-item">
                                 <a href="<?php echo $URL; ?>/localidades" class="nav-link active">
                                     <i class="nav-icon fas fa-map"></i>
                                     <p>
                                         Localidades
+                                    </p>
+                                </a>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a href="<?php echo $URL; ?>/calculadora" class="nav-link active">
+                                    <i class="nav-icon fas fa-dollar-sign"></i>
+                                    <p>
+                                        Actualizar Tarifa
                                     </p>
                                 </a>
                             </li>

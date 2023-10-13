@@ -76,7 +76,7 @@ include('../app/controllers/calculadora/update_tarifa.php');
                                         </div>
                                         <hr>
                                         <div class="form-group">
-                                            <a href="precios.php" class="btn btn-secondary">Cancelar</a>
+                                            <a href="index.php" class="btn btn-secondary">Cancelar</a>
                                             <button type="submit" class="btn btn-success">Actualizar</button>
                                         </div>
                                     </form>
