@@ -117,8 +117,6 @@ include ('../app/controllers/choferes/listado_choferes.php');
                 orientation: 'landscape',
                 buttons: [
                 {
-                    extend: 'pdf'
-                },{
                     extend: 'excel'
                 },{
                     text: 'Imprimir',

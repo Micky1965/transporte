@@ -119,8 +119,6 @@ include ('../app/controllers/moviles/listado_moviles.php');
                 orientation: 'landscape',
                 buttons: [
                 {
-                    extend: 'pdf'
-                },{
                     extend: 'excel'
                 },{
                     text: 'Imprimir',

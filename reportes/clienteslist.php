@@ -118,8 +118,6 @@ include('../app/controllers/clientes/listado_clientes.php');
                     orientation: 'landscape',
                     buttons: [
                     {
-                        extend: 'pdf'
-                    }, {
                         extend: 'excel'
                     }, {
                         text: 'Imprimir',

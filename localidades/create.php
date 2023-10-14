@@ -53,7 +53,7 @@ include('../layout/parte1.php');
                                                     <input type="text" name="distancia_localidad" class="form-control" placeholder="Distancia en Kms" required>
                                                 </div>
                                             </div>
-                                            <div class="col-md-2">
+                                            <!-- <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label for="">Precio T1</label>
                                                     <input type="text" name="precio_t1" class="form-control" required>
@@ -64,7 +64,7 @@ include('../layout/parte1.php');
                                                     <label for="">Precio T2-5-6</label>
                                                     <input type="text" name="precio_t2" class="form-control" required>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <hr>
                                             <div class="form-group">
                                                 <a href="index.php" class="btn btn-secondary">Cancelar</a>

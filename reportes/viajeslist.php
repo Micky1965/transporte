@@ -60,7 +60,7 @@ include('../app/controllers/pedidos/listado_pedidos.php');
                                             <td><?php echo $pedidos_dato['direccion']; ?></td>
                                             <td><?php echo $pedidos_dato['nombre']; ?></td>
                                             <td><?php echo $pedidos_dato['celular']; ?></td>
-                                            <td><?php echo $pedidos_dato['movil']; ?></td>
+                                            <td><center><?php echo $pedidos_dato['movil']; ?></center></td>
                                             <td><?php echo $pedidos_dato['destino']; ?></td>
                                             <td><?php echo $pedidos_dato['fyh_creacion']; ?></td>
                                             <td><?php echo $pedidos_dato['observaciones']; ?></td>
@@ -120,8 +120,6 @@ include('../app/controllers/pedidos/listado_pedidos.php');
                 orientation: 'landscape',
                 buttons: [
                 {
-                    extend: 'pdf'
-                }, {
                     extend: 'excel'
                 }, {
                     text: 'Imprimir',

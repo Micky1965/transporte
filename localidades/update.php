@@ -55,7 +55,7 @@ include('../app/controllers/localidades/update_localidad.php');
                                                     <input type="text" name="distancia_localidad" class="form-control" value="<?php echo $distancia_localidad;?>" required>
                                                 </div>
                                             </div>
-                                            <div class="col-md-2">
+                                            <!-- <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label for="">Precio T1</label>
                                                     <input type="text" name="precio_t1" class="form-control"value="<?php echo $precio_t1;?>">
@@ -66,7 +66,7 @@ include('../app/controllers/localidades/update_localidad.php');
                                                     <label for="">Precio T2-5-6</label>
                                                     <input type="text" name="precio_t2" class="form-control" value="<?php echo $precio_t2;?>">
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <hr>
                                             <div class="form-group">
                                                 <a href="index.php" class="btn btn-secondary">Cancelar</a>

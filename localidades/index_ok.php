@@ -11,6 +11,18 @@ foreach ($tarifas as $tarifa) {
     $km_t1 = $tarifa['km_t1'];
     $bandera_t2 = $tarifa['bandera_t2'];
     $km_t2 = $tarifa['km_t2'];
+    $distancia = $tarifa["distancia"];
+}
+?>
+<?php
+if ($_POST) {
+    $distancia = $_POST["distancia"];
+    if ($distancia >= "0") {
+        $total_aproximado = $km_t1 * $distancia + $bandera_t1;
+        $total_aproximado2 = $km_t2 * $distancia + $bandera_t2;
+    } else {
+        print "El Kilometraje debe ser Mayor que 0";
+    }
 }
 ?>
 
@@ -65,12 +77,8 @@ foreach ($tarifas as $tarifa) {
                                         $id_localidad = $localidad['id_localidad'];
                                         $nombre_localidad = $localidad['nombre_localidad'];
                                         $distancia_localidad = $localidad['distancia_localidad'];
-                                        // $precio_t1 = $localidad['precio_t1'];
-                                        // $precio_t2 = $localidad['precio_t2'];
-                                    ?>
-                                    <?php
-                                        $total_aproximado = $km_t1 * $localidad['distancia_localidad'] + $bandera_t1;
-                                        $total_aproximado2 = $km_t2 * $localidad['distancia_localidad'] + $bandera_t2;
+                                        $precio_t1 = $localidad['precio_t1'];
+                                        $precio_t2 = $localidad['precio_t2'];
                                     ?>
                                         <tr>
                                             <td>
@@ -78,8 +86,8 @@ foreach ($tarifas as $tarifa) {
                                             </td>
                                             <td><?php echo $nombre_localidad; ?></td>
                                             <td><?php echo $distancia_localidad; ?></td>
-                                            <td><?php echo $total_aproximado; ?></td>
-                                            <td><?php echo $total_aproximado2; ?></td>
+                                            <td><?php echo $precio_t1; ?></td>
+                                            <td><?php echo $precio_t2; ?></td>
                                             <td>
                                                 <a href="update.php?id=<?php echo $id_localidad; ?>" class="btn btn-success">Editar</a>
                                             </td>

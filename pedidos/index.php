@@ -19,15 +19,15 @@ include('../app/controllers/pedidos/listado_pedidos.php');
                                 <div class="navbar-nav">
                                     <a class="nav-link" href="../pedidos/create.php" style="color:gold;">
                                                                 <i class="fas fa-phone"></i><b> Nuevo Viaje</b></a>
-                                    <a class="nav-link" href="../reloj/index.html" style="color:#ffffff;">
-                                                                <i class="fas fa-list"></i><b> Reservas</b></a>
+                                    <!-- <a class="nav-link" href="../reloj/index.html" style="color:#ffffff;">
+                                                                <i class="fas fa-list"></i><b> Reservas</b></a> -->
                                     <a class="nav-link" href="../estadomoviles/enservicio.php" style="color:#ffffff;">
                                                                 <i class="fas fa-car"></i><b> En Servicio</b></a>
                                     <a class="nav-link" href="../estadomoviles/fueraservicio.php" style="color:#ffffff;">
                                                                 <i class="fas fa-ban"></i><b> Fuera de Servicio</b></a>
                                     <a class="nav-link" href="../estadomoviles/index.php" style="color:#ffffff;">
                                                                 <i class="fas fa-car-side"></i><b> Estado de los Móviles</b></a>
-                                    <div style="width: 90px"></div> 
+                                    <div style="width: 280px"></div> 
                                     <a href="vaciar.php" class="btn btn-danger">Vaciar Lista</a>
                                 </div>
                             </div>
@@ -77,7 +77,7 @@ include('../app/controllers/pedidos/listado_pedidos.php');
                                             </td>
                                             <td><?php echo $pedidos_dato['direccion']; ?></td>
                                             <td><?php echo $pedidos_dato['nombre']; ?></td>
-                                            <td><?php echo $pedidos_dato['movil']; ?></td>
+                                            <td><center><?php echo $pedidos_dato['movil']; ?></center></td>
                                             <td><?php echo $pedidos_dato['fyh_creacion']; ?></td>
                                             <td><?php echo $pedidos_dato['observaciones']; ?></td>
                                             <td><?php echo $pedidos_dato['fecha']; ?></td>
@@ -86,7 +86,6 @@ include('../app/controllers/pedidos/listado_pedidos.php');
                                                     <div class="btn-group">
                                                         <a href="show.php?id=<?php echo $id_pedido; ?>" type="button" class="btn btn-secondary btn-sm"><i class="fa fa-eye"> Ver</i></a>
                                                         <a href="update.php?id=<?php echo $id_pedido; ?>" type="button" class="btn btn-success btn-sm"><i class="fa fa-pencil-alt"> Editar</i></a>
-                                                        <a href="delete.php?id=<?php echo $id_pedido; ?>" type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"> Eliminar</i></a>
                                                     </div>
                                                 </center>
                                             </td>
