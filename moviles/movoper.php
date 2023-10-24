@@ -5,7 +5,7 @@ include ('../layout/parte1.php');
 include ('../app/controllers/moviles/listado_moviles.php');
 
 ?>
-<!-- ESTE ARCHIVO FUE CREADO PARA SER VISTO OR EL ROL 2 (operador), "tiene acceso restringido a las ACCIONES"    
+<!-- ESTE ARCHIVO FUE CREADO PARA SER VISTO POR EL ROL 2(operador), "tiene acceso restringido a las ACCIONES"    
     Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -48,6 +48,7 @@ include ('../app/controllers/moviles/listado_moviles.php');
                                     <th><center>Propietario</center></th>
                                     <th><center>Licencia</center></th>
                                     <th><center>Nro Móvil</center></th>
+                                    <th><center>Incorporación</center></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -64,6 +65,7 @@ include ('../app/controllers/moviles/listado_moviles.php');
                                         <td><?php echo $moviles_dato['propietario'];?></td>
                                         <td><?php echo $moviles_dato['licencia'];?></td>
                                         <td><?php echo $moviles_dato['nro'];?></td>
+                                        <td><?php echo $moviles_dato['incorporacion'];?></td>
                                     </tr>
                                     <?php
                                 }
@@ -90,7 +92,7 @@ include ('../app/controllers/moviles/listado_moviles.php');
 <script>
     $(function () {
         $("#table_moviles").DataTable({
-            "pageLength": 3,
+            "pageLength": 6,
             "language": {
                 "emptyTable": "No hay información",
                 "info": "Mostrando _START_ a _END_ de _TOTAL_ moviles",

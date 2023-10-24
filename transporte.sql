@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-10-2023 a las 04:57:11
+-- Tiempo de generación: 14-10-2023 a las 16:49:25
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -94,11 +94,12 @@ CREATE TABLE `tb_estadomovil` (
 --
 
 INSERT INTO `tb_estadomovil` (`id_estadomovil`, `nro_movil`, `modelo_movil`, `patente_movil`, `entrada`, `salida`, `fecha`, `estado`) VALUES
-(8, '87', 'Etios', 'AC321FT', '22:08:34', '20:28:03', '2023-10-08', 1),
-(9, '12', 'Prisma', 'AC852LK', '20:18:32', '20:28:19', '2023-10-08', 0),
-(10, '56', '306', 'PST987', '20:42:05', '20:19:30', '2023-10-08', 1),
-(20, '44', 'Gol Trend', 'AA852MK', '20:23:24', '20:23:12', '2023-10-08', 1),
-(25, '71', 'Siena', 'NWT682', '23:02:25', '20:28:11', '2023-10-08', 1);
+(10, '56', '306', 'PST987', '18:46:04', '20:04:49', '2023-10-13', 1),
+(20, '44', 'Gol Trend', 'AA852MK', '19:40:57', '18:58:44', '2023-10-12', 0),
+(41, '71', 'Siena', 'NWT682', '20:03:21', '23:09:00', '2023-10-12', 0),
+(42, '87', 'Etios', 'AC321FT', '19:05:12', '20:04:32', '2023-10-13', 1),
+(43, '66', 'Voyage', 'AD789GH', '23:07:53', '19:11:18', '2023-10-13', 1),
+(44, '12', 'Prisma', 'AC852LK', '20:02:56', '19:43:48', '2023-10-12', 1);
 
 -- --------------------------------------------------------
 
@@ -235,7 +236,8 @@ INSERT INTO `tb_localidades` (`id_localidad`, `nombre_localidad`, `distancia_loc
 (114, 'Vespucio', 349, 70351, 77351),
 (115, 'Yatasto', 147, 29749, 32709),
 (118, 'Betania', 67, 13669, 15029),
-(131, 'Catamarca', 537, 108139, 118899);
+(131, 'Catamarca', 537, 108139, 118899),
+(132, 'Prueba1', 200, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -293,7 +295,10 @@ CREATE TABLE `tb_pedidos` (
 --
 
 INSERT INTO `tb_pedidos` (`id_pedido`, `nombre`, `direccion`, `celular`, `destino`, `referencia`, `movil`, `observaciones`, `fecha`, `fyh_creacion`) VALUES
-(1, 'Maria Elena', 'Rio Negro 2222 - Inter', '3874563214', 'catedral', 'casa dos pisos', '87', '', '2023-10-04', '17:51:04');
+(1, 'Macarena', 'Finca San Isidro', '3885963741', 'zuviria 300', 'Cartel de la Vaquita', '71', 'se escapó sin pagar', '2023-10-13', '18:09:49'),
+(2, 'Maria Elena', 'Rio Negro 2222 - Inter', '3874563214', 'catedral', 'casa dos pisos', '12', 'olvidó el paraguas', '2023-10-13', '18:13:58'),
+(3, 'Natalio Ruiz', 'Carretera 3654', '3884951357', 'Villa Primavera', 'Rejas Blancas', '87', 'el chofer lo insultó', '2023-10-13', '22:55:39'),
+(4, 'Lorena Carrizo', 'M35 - C14- San Carlos', '3886741852', 'Chachapoyas', 'sobre avenida', '66', 'cancelado', '2023-10-13', '23:03:56');
 
 -- --------------------------------------------------------
 
@@ -468,13 +473,13 @@ ALTER TABLE `tb_clientes`
 -- AUTO_INCREMENT de la tabla `tb_estadomovil`
 --
 ALTER TABLE `tb_estadomovil`
-  MODIFY `id_estadomovil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_estadomovil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_localidades`
 --
 ALTER TABLE `tb_localidades`
-  MODIFY `id_localidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
+  MODIFY `id_localidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_moviles`
@@ -486,7 +491,7 @@ ALTER TABLE `tb_moviles`
 -- AUTO_INCREMENT de la tabla `tb_pedidos`
 --
 ALTER TABLE `tb_pedidos`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_roles`

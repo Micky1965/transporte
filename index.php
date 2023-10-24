@@ -153,6 +153,7 @@ include('app/controllers/pedidos/listado_pedidos.php');
     }
     if ($rol_sesion == 2) { ?>
     
+    
 
     <?php
     }
