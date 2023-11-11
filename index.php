@@ -148,24 +148,23 @@ include('app/controllers/pedidos/listado_pedidos.php');
               </a>
             </div>
           </div>
+        
 
-          <?php
+        <?php
     }
     if ($rol_sesion == 2) { ?>
     
-    
-
     <?php
     }
     ?>
-
-        </div>
     
+
+      </div>
       <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
+    </div><!-- /.container-fluid -->
+  </div>
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 
-<?php include('layout/parte2.php'); ?>
+<?php include ('layout/parte2.php'); ?>

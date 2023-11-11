@@ -44,7 +44,7 @@ include('../layout/parte1.php');
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Nombre</label>
-                                                    <input type="text" name="nombre_localidad" class="form-control" placeholder="Nombre Localidad" required>
+                                                    <input type="text" style="text-transform: uppercase;" name="nombre_localidad" class="form-control" placeholder="Nombre Localidad" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">

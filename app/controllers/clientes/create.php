@@ -3,8 +3,10 @@
 include('../../config.php');
 
 $nombre_cliente = $_POST['nombre_cliente'];
+$nombre_cliente = strtoupper($nombre_cliente);
 $celular_cliente = $_POST['celular_cliente'];
 $direccion_cliente = $_POST['direccion_cliente'];
+$direccion_cliente = strtoupper($direccion_cliente);
 $obs_cliente = $_POST['obs_cliente'];
 $referencia_cliente = $_POST['referencia_cliente'];
 

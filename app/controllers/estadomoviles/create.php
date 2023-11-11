@@ -41,7 +41,7 @@ $sentencia->bindParam('estado', $estado);
 
 $sentencia->execute();
 session_start();
-    $_SESSION['mensaje'] = "El Móvil Comienza Su Servicio";
+    $_SESSION['mensaje'] = "Móvil Ingresado Con Éxito";
     $_SESSION['icono'] = "success";
     header('Location: ' . $URL . '/estadomoviles/');
 }

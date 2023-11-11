@@ -60,7 +60,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
         </nav>
         <!-- /.navbar -->
-
+    </div>
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
@@ -315,7 +315,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <p>Cerrar Sesión</p>
                                 </a>
                             </li>
-
+        
                             
                         <?php
                         }
@@ -412,3 +412,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
             <!-- /.sidebar -->
         </aside>
+        
+    

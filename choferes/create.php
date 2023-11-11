@@ -44,7 +44,7 @@ include('../app/controllers/roles2/listado_roles2.php')
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Nombres / Apellidos <font color="red">*</font></label>
-                                                    <input type="text" name="nombre_chofer" class="form-control" required>
+                                                    <input type="text" style="text-transform: uppercase;" name="nombre_chofer" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">

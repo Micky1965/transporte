@@ -86,7 +86,6 @@ include ('../app/controllers/roles2/listado_roles2.php');
 <?php include ('../layout/parte2.php'); ?>
 
 
-
 <script>
     $(function () {
         $("#table_choferes").DataTable({
@@ -112,6 +111,22 @@ include ('../app/controllers/roles2/listado_roles2.php');
             },
             "responsive": true, "lengthChange": true, "autoWidth": false,
             
+            buttons: [{
+                extend: 'collection',
+                text: 'Reportes',
+                orientation: 'landscape',
+                buttons: [
+                {
+                    extend: 'excel'
+                },{
+                    text: 'Imprimir',
+                    extend: 'print'
+                }
+                ]
+            },
+            ],
         }).buttons().container().appendTo('#table_choferes_wrapper .col-md-6:eq(0)');
     });
 </script>
+
+

@@ -44,7 +44,6 @@ include('../app/controllers/clientes/listado_clientes.php');
                                             <th><center>Celular</center></th>
                                             <th><center>Dirección</center></th>
                                             <th><center>Referencias</center></th>
-                                            <th><center>Observaciones</center></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -60,7 +59,6 @@ include('../app/controllers/clientes/listado_clientes.php');
                                                 <td><?php echo $clientes_dato['celular']; ?></td>
                                                 <td><?php echo $clientes_dato['direccion']; ?></td>
                                                 <td><?php echo $clientes_dato['referencia']; ?></td>
-                                                <td><?php echo $clientes_dato['obs']; ?></td>
                                             </tr>
                                         <?php
                                         }

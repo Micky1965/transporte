@@ -3,6 +3,7 @@
 include('../../config.php');
 
 $nombre_chofer = $_POST['nombre_chofer'];
+$nombre_chofer = strtoupper($nombre_chofer);
 $dni_chofer = $_POST['dni_chofer'];
 $celular_chofer = $_POST['celular_chofer'];
 $direccion_chofer = $_POST['direccion_chofer'];

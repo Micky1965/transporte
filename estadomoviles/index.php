@@ -80,7 +80,7 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                                     
                                                 <?php
                                                 }else{ ?>
-                                                    <button class="btn btn-info" type="button" data-toggle="modal" 
+                                                    <button class="btn btn-success" type="button" data-toggle="modal" 
                                                         data-target="#modal<?php echo $id_estadomovil;?>">Comenzar
                                                     </button>
                                                 <?php }?>
@@ -287,4 +287,3 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                 
 <?php include ('../layout/mensajes.php'); ?>
 <?php include ('../layout/parte2.php'); ?>
-                              

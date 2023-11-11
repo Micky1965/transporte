@@ -131,6 +131,19 @@ foreach ($tarifas as $tarifa) {
             "lengthChange": true,
             "autoWidth": false,
 
+            buttons: [{
+                    extend: 'collection',
+                    text: 'Reportes',
+                    orientation: 'landscape',
+                    buttons: [
+                    {
+                        extend: 'excel'
+                    },{
+                        text: 'Imprimir',
+                        extend: 'print'
+                    }]
+                },
+            ],
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     });
 </script>

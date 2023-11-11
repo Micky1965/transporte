@@ -2,6 +2,7 @@
 
 include('../../config.php');
 $nombre_localidad = $_POST['nombre_localidad'];
+$nombre_localidad = strtoupper($nombre_localidad);
 $distancia_localidad = $_POST['distancia_localidad'];
 // $precio_t1 = $_POST['precio_t1'];
 // $precio_t2 = $_POST['precio_t2'];

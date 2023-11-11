@@ -44,19 +44,19 @@ include('../layout/parte1.php');
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Nombres / Apellidos <font color="red">*</font></label>
-                                                    <input type="text" name="nombre_cliente" class="form-control" required>
+                                                    <input type="text" style="text-transform: uppercase;" name="nombre_cliente" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Celular</label>
-                                                    <input type="number" name="celular_cliente" class="form-control" required>
+                                                    <input type="number" name="celular_cliente" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Dirección <font color="red">*</font></label>
-                                                    <input type="text" name="direccion_cliente" class="form-control" required>
+                                                    <input type="text" style="text-transform: uppercase;" name="direccion_cliente" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
