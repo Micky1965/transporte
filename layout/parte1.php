@@ -31,10 +31,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="<?php echo $URL; ?>/public/templates/AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
 
 </head>
-
 <body class="hold-transition sidebar-mini">
 
-    <div class="wrapper">
+<div class="wrapper">
 
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -60,7 +59,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
         </nav>
         <!-- /.navbar -->
-    </div>
+    
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
@@ -209,7 +208,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <a href="#" class="nav-link active">
                                     <i class="nav-icon fas fa-car-side"></i>
                                     <p>
-                                        Estado de los Móviles
+                                        Ingresar Remis
                                         <i class="right fas fa-angle-left"></i>
                                     </p>
                                 </a>

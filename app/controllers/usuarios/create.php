@@ -19,9 +19,10 @@ foreach ($usuarios as $usuario) {
     $nick_user_table = $usuario['nick_user'];
     $dni_user_table = $usuario['dni_user'];
 }
-if (  (($nick_user_table) == ($nick_user) or ($dni_user_table) == ($dni_user))  ) {
+if (  (($nick_user_table) == ($nick_user)
+    or ($dni_user_table) == ($dni_user))  ) {
     session_start();
-    $_SESSION['mensaje'] = "Este Usuario Ya Existe En La Base De Datos";
+    $_SESSION['mensaje'] = "El DNI de este Usuario Ya Existe en la Base de Datos";
     $_SESSION['icono'] = "error";
     header('Location: ' . $URL . '/usuarios/');
 } else {

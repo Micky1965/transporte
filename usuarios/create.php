@@ -42,31 +42,31 @@ include('../app/controllers/roles/listado_roles.php')
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="">Usuario</label>
+                                                    <label for="">Usuario <font color="red">*</font></label>
                                                     <input type="text" name="nick_user" class="form-control" placeholder="Nick..." required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="">Nombres / Apellidos</label>
+                                                    <label for="">Nombres / Apellidos <font color="red">*</font></label>
                                                     <input type="text" name="nombre_user" class="form-control" placeholder="Nombre de Usuario..." required>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="">Dni</label>
-                                                    <input type="text" name="dni_user" class="form-control" required>
+                                                    <label for="">Dni <font color="red">*</font></label>
+                                                    <input type="number" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'" / name="dni_user" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="">Celular</label>
-                                                    <input type="text" name="celular_user" class="form-control" required>
+                                                    <label for="">Celular <font color="red">*</font></label>
+                                                    <input type="number" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'" / name="celular_user" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="">Dirección</label>
+                                                    <label for="">Dirección <font color="red">*</font></label>
                                                     <input type="text" name="direccion_user" class="form-control" required>
                                                 </div>
                                             </div>
@@ -109,7 +109,7 @@ include('../app/controllers/roles/listado_roles.php')
     </div><!-- /.container-fluid -->
 </div>
 <!-- /.content -->
-</div>
+
 <!-- /.content-wrapper -->
 
 <?php include('../layout/parte2.php'); ?>

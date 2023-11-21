@@ -56,7 +56,8 @@ include('../layout/parte1.php');
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="">Año<font color="red">*</font></label>
-                                                    <input type="number" name="anio_movil" class="form-control" required>
+                                                    <input type="number" name="anio_movil" class="form-control" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'" / required>
+                                                    <!-- <input type="number" name="anio_movil" class="form-control" required> -->
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
@@ -68,7 +69,8 @@ include('../layout/parte1.php');
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="">Licencia</label>
-                                                    <input type="number" name="licencia_movil" class="form-control">
+                                                    <input type="number" name="licencia_movil" class="form-control" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'" />
+                                                    <!-- <input type="number" name="licencia_movil" class="form-control"> -->
                                                 </div>
                                             </div>
                                             <div class="col-md-3">

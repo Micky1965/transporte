@@ -84,8 +84,10 @@ include('../app/controllers/pedidos/listado_pedidos.php');
                                             <td>
                                                 <center>
                                                     <div class="btn-group">
-                                                        <a href="show.php?id=<?php echo $id_pedido; ?>" type="button" class="btn btn-secondary btn-sm"><i class="fa fa-eye"> Ver</i></a>
-                                                        <a href="update.php?id=<?php echo $id_pedido; ?>" type="button" class="btn btn-success btn-sm"><i class="fa fa-pencil-alt"> Editar</i></a>
+                                                        <a href="show.php?id=<?php echo $id_pedido; ?>" type="button" class="btn btn-secondary btn"><i class="fa fa-eye"></i></a>
+                                                        <a href="update.php?id=<?php echo $id_pedido; ?>" type="button" class="btn btn-success btn"><i class="fa fa-pencil-alt"></i></a>
+                                                        <a href="delete.php?id=<?php echo $id_pedido; ?>" type="button" class="btn btn-danger btn"><i class="fa fa-trash"></i></a>
+
                                                     </div>
                                                 </center>
                                             </td>

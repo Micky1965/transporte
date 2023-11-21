@@ -9,7 +9,6 @@ $patente_movil = strtoupper($patente_movil);
 $entrada = $_POST['entrada'];
 $salida = $_POST['salida'];
 $fecha = $_POST['fecha'];
-$movil = $_POST['movil'];
 $estado = 0;
 
 $sql = "SELECT * FROM tb_estadomovil WHERE patente_movil = '$patente_movil'";
@@ -22,7 +21,7 @@ foreach ($estadomovil as $estmovil) {
 }
 if (  (($patente_estmovil_table) == ($patente_movil))  ) {
     session_start();
-    $_SESSION['mensaje'] = "Este Móvil Ya Está En Servicio";
+    $_SESSION['mensaje'] = "Este Móvil Ya Fué Ingresado Anteriormente";
     $_SESSION['icono'] = "error";
     header('Location: ' . $URL . '/estadomoviles/');
     } else {

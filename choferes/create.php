@@ -50,13 +50,15 @@ include('../app/controllers/roles2/listado_roles2.php')
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label for="">Dni <font color="red">*</font></label>
-                                                    <input type="number" name="dni_chofer" class="form-control" required>
+                                                    <input type="number" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'" / name="dni_chofer" class="form-control" required>
+                                                    <!-- <input type="number" name="dni_chofer" class="form-control" required> -->
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label for="">Celular <font color="red">*</font></label>
-                                                    <input type="number" name="celular_chofer" class="form-control" required>
+                                                    <input type="number" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'" / name="celular_chofer" class="form-control" required>
+                                                    <!-- <input type="number" name="celular_chofer" class="form-control" required> -->
                                                 </div>
                                             </div>
                                             <div class="col-md-2">

@@ -39,7 +39,7 @@ $sentencia->bindParam('referencia_cliente', $referencia_cliente);
 $sentencia->bindParam('obs_cliente', $obs_cliente);
 $sentencia->execute();
 session_start();
-    $_SESSION['mensaje'] = "cliente Registrado con Éxito";
+    $_SESSION['mensaje'] = "Cliente Registrado con Éxito";
     $_SESSION['icono'] = "success";
     header('Location: ' . $URL . '/clientes/');
 }

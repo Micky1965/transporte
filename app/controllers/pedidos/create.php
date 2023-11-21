@@ -16,9 +16,9 @@ $query->execute();
 $estadomovil = $query->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($moviles as $movil) {
-    $nro_movil_table != $movil['nro_movil'];
+    $nro_movil_table = $movil['nro_movil'];
 }
-if (  (($nro_movil_table) == ($nro_movil))  ) {
+if (  (($nro_movil_table) != ($nro_movil))  ) {
     session_start();
     $_SESSION['mensaje'] = "Este Móvil NO Existe en la Base de Datos";
     $_SESSION['icono'] = "error";

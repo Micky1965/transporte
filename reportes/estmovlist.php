@@ -44,8 +44,8 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                     <th><center>Modelo</center></th>
                                     <th><center>Patente</center></th>
                                     <th><center>Hora Ingreso</center></th>
+                                    <th><center>Fecha Ingreso</center></th>
                                     <th><center>Hora Salida</center></th>
-                                    <th><center>Fecha</center></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -67,8 +67,8 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                         <td><?php echo $estadomovil_dato['modelo_movil'];?></td>
                                         <td><?php echo $estadomovil_dato['patente_movil'];?></td>
                                         <td><?php echo $estadomovil_dato['entrada'];?></td>
-                                        <td><?php echo $estadomovil_dato['salida'];?></td>
                                         <td><?php echo $estadomovil_dato['fecha'];?></td>
+                                        <td><?php echo $estadomovil_dato['salida'];?></td>
                                     </tr>
                                     <?php 
                                     }

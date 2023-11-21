@@ -94,9 +94,10 @@ include('../app/controllers/estadomoviles/listado_estadomoviles.php');
                         <div class="card-header">
                             <h3 class="card-title">Ingresar a Estado de Móviles</h3>
                             <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                 </button>
                             </div>
+                        
                         </div>
 
                         <div class="card-body" style="display: block;">
@@ -106,38 +107,38 @@ include('../app/controllers/estadomoviles/listado_estadomoviles.php');
                                         <div class="row">
                                             <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <label for="">Nro Móvil</label>
+                                                    <label for="">Nro Móvil <font color="red">*</font></label>
                                                     <input type="text" name="nro_movil" class="form-control" id="nro_movil" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <label for="">Modelo</label>
+                                                    <label for="">Modelo <font color="red">*</font></label>
                                                     <input type="text" name="modelo_movil" class="form-control" id="modelo_movil" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <label for="">Patente</label>
-                                                    <input type="text" style="text-transform: uppercase;" name="patente_movil" class="form-control" id="patente_movil" required>
+                                                    <!-- <label for="">Patente <font color="red">*</font></label> -->
+                                                    <input type="text" style="text-transform: uppercase;" name="patente_movil" class="form-control" id="patente_movil" required hidden>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <label for="">Hora Ingreso</label>
-                                                    <input type="text" name="entrada" class="form-control" id="entrada">
+                                                    <!-- <label for="">Hora Ingreso</label> -->
+                                                    <input type="text" name="entrada" class="form-control" id="entrada" hidden>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
-                                                    <label for="">Hora Salida</label>
-                                                    <input type="text" name="salida" class="form-control" id="salida">
+                                                    <!-- <label for="">Hora Salida</label> -->
+                                                    <input type="text" name="salida" class="form-control" id="salida" hidden>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="">Fecha Ingreso</label>
-                                                    <input type="date" name="fecha" class="form-control" id="fecha">
+                                                    <!-- <label for="">Fecha Ingreso</label> -->
+                                                    <input type="date" name="fecha" class="form-control" id="fecha" hidden>
                                                 </div>
                                             </div>
                                         </div>
@@ -168,7 +169,7 @@ include('../app/controllers/estadomoviles/listado_estadomoviles.php');
 
 <script>
     $(function() {
-        $("#table_estadomovil").DataTable({
+        $("#table_moviles").DataTable({
             "pageLength": 3,
             "language": {
                 "emptyTable": "No hay información",
@@ -193,6 +194,6 @@ include('../app/controllers/estadomoviles/listado_estadomoviles.php');
             "lengthChange": true,
             "autoWidth": false,
 
-        }).buttons().container().appendTo('#table_estadomovil_wrapper .col-md-6:eq(0)');
+        }).buttons().container().appendTo('#table_moviles_wrapper .col-md-6:eq(0)');
     });
 </script>

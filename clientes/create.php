@@ -50,7 +50,8 @@ include('../layout/parte1.php');
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Celular</label>
-                                                    <input type="number" name="celular_cliente" class="form-control">
+                                                    <input type="number" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'" / name="celular_cliente" class="form-control">
+                                                    <!-- <input type="number" name="celular_cliente" class="form-control"> -->
                                                 </div>
                                             </div>
                                             <div class="col-md-6">

@@ -7,7 +7,7 @@ include ('../app/controllers/roles2/listado_roles2.php');
 
 ?>
 
-<!-- ESTE ARCHIVO FUE CREADO PARA SER VISTO OR EL ROL 2 (operador), "tiene acceso restringido a las ACCIONES"    
+<!-- ESTE ARCHIVO FUE CREADO PARA SER VISTO POR EL ROL 2 (operador), "tiene acceso restringido a las ACCIONES"    
     Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->

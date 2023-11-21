@@ -58,13 +58,13 @@ include('../app/controllers/roles/listado_roles.php');
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="">Dni</label>
-                                                    <input type="text" name="dni_user" class="form-control" value="<?php echo $dni_user; ?>" required>
+                                                    <input type="number" name="dni_user" class="form-control" value="<?php echo $dni_user; ?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="">Celular</label>
-                                                    <input type="text" name="celular_user" class="form-control" value="<?php echo $celular_user; ?>" required>
+                                                    <input type="number" name="celular_user" class="form-control" value="<?php echo $celular_user; ?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
