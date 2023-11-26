@@ -7,13 +7,13 @@ $nombre = $_POST['nombre'];
 $celular = $_POST['celular'];
 $destino = $_POST['destino'];
 $referencia = $_POST['referencia'];
-$movil = $_POST['movil'];
+$nro_movil = $_POST['movil'];
 $observaciones = $_POST['observaciones'];
 
 $sql = "SELECT * FROM tb_moviles WHERE nro_movil = '$nro_movil'";
 $query = $pdo->prepare($sql);
 $query->execute();
-$estadomovil = $query->fetchAll(PDO::FETCH_ASSOC);
+$moviles = $query->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($moviles as $movil) {
     $nro_movil_table = $movil['nro_movil'];
@@ -34,7 +34,7 @@ $sentencia->bindParam('nombre', $nombre);
 $sentencia->bindParam('celular', $celular);
 $sentencia->bindParam('destino', $destino);
 $sentencia->bindParam('referencia', $referencia);
-$sentencia->bindParam('movil', $movil);
+$sentencia->bindParam('movil', $nro_movil);
 $sentencia->bindParam('observaciones', $observaciones);
 $sentencia->bindParam('fyh_creacion', $fechaHora);
 $sentencia->bindParam('fecha', $fecha);

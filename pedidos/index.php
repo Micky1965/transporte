@@ -21,11 +21,11 @@ include('../app/controllers/pedidos/listado_pedidos.php');
                                                                 <i class="fas fa-phone"></i><b> Nuevo Viaje</b></a>
                                     <!-- <a class="nav-link" href="../reloj/index.html" style="color:#ffffff;">
                                                                 <i class="fas fa-list"></i><b> Reservas</b></a> -->
-                                    <a class="nav-link" href="../estadomoviles/enservicio.php" style="color:#ffffff;">
+                                    <a class="nav-link" href="../moviles/enservicio.php" style="color:#ffffff;">
                                                                 <i class="fas fa-car"></i><b> En Servicio</b></a>
-                                    <a class="nav-link" href="../estadomoviles/fueraservicio.php" style="color:#ffffff;">
+                                    <a class="nav-link" href="../moviles/fueraservicio.php" style="color:#ffffff;">
                                                                 <i class="fas fa-ban"></i><b> Fuera de Servicio</b></a>
-                                    <a class="nav-link" href="../estadomoviles/index.php" style="color:#ffffff;">
+                                    <a class="nav-link" href="../moviles/index2.php" style="color:#ffffff;">
                                                                 <i class="fas fa-car-side"></i><b> Estado de los Móviles</b></a>
                                     <div style="width: 280px"></div> 
                                     <a href="vaciar.php" class="btn btn-danger">Vaciar Lista</a>

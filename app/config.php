@@ -18,10 +18,9 @@ try {
 $URL = "http://localhost/www.transporte.com";
 
 date_default_timezone_set("America/Argentina/Salta");
-$fechaHora = date('H:i:s');
+$fechaHora = date('Y/m/d H:i:s');
+$hora = date('H:i:s');
 $fecha = date('Y/m/d');
-$newFecha = date('d/m/Y');
-$horaFechaActual = $fechaHora.' '.$newFecha;
 
 if (isset($_SESSION['mensaje'])) {
     $respuesta = $_SESSION['mensaje']; ?>

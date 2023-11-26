@@ -205,27 +205,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link active">
+                                <a href="<?php echo $URL; ?>/moviles/index2.php" class="nav-link active">
                                     <i class="nav-icon fas fa-car-side"></i>
                                     <p>
-                                        Ingresar Remis
-                                        <i class="right fas fa-angle-left"></i>
+                                        Estado de los Móviles
                                     </p>
                                 </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="<?php echo $URL; ?>/estadomoviles/create.php" class="nav-link">
-                                            <i class="nav-icon fas fa-car-side"></i>
-                                            <p>Agregar Móvil</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="<?php echo $URL; ?>/estadomoviles/index.php" class="nav-link">
-                                            <i class="nav-icon fas fa-list"></i>
-                                            <p>Listado</p>
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
 
 

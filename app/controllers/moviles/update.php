@@ -32,7 +32,8 @@ $sentencia->bindParam('chofer1_movil', $chofer1_movil);
 $sentencia->bindParam('chofer2_movil', $chofer2_movil);
 $sentencia->bindParam('id_movil', $id_movil);
 $sentencia->execute();
-    session_start();
-    $_SESSION['mensaje'] = "Datos del Móvil Actualizados";
-    $_SESSION['icono'] = "success";
-    header('Location: ' . $URL . '/moviles/');
+
+session_start();
+$_SESSION['mensaje'] = "Datos del Móvil Actualizados";
+$_SESSION['icono'] = "success";
+header('Location: ' . $URL . '/moviles/');
