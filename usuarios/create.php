@@ -28,11 +28,7 @@ include('../app/controllers/roles/listado_roles.php')
                 <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h1 class="card-title"><b>Registro de un Nuevo Usuario</b></h1>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                                </button>
-                            </div>
+                            <h4><b>Registro de un Nuevo Usuario</b></h4>
                         </div>
 
                         <div class="card-body" style="display: block;">
@@ -43,7 +39,7 @@ include('../app/controllers/roles/listado_roles.php')
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="">Usuario <font color="red">*</font></label>
-                                                    <input type="text" name="nick_user" class="form-control" placeholder="Nick..." required>
+                                                    <input type="text" style="text-transform: uppercase;" name="nick_user" class="form-control" placeholder="Nick..." required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -83,7 +79,7 @@ include('../app/controllers/roles/listado_roles.php')
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="">Contraseña</label>
                                                     <input type="text" name="password_user" class="form-control" required>

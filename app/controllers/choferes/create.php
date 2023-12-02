@@ -3,7 +3,6 @@
 include('../../config.php');
 
 $nombre_chofer = $_POST['nombre_chofer'];
-$nombre_chofer = strtoupper($nombre_chofer);
 $dni_chofer = $_POST['dni_chofer'];
 $celular_chofer = $_POST['celular_chofer'];
 $direccion_chofer = $_POST['direccion_chofer'];
@@ -11,18 +10,17 @@ $rol2 = $_POST['rol2'];
 $movil = $_POST['movil'];
 $obs = $_POST['obs'];
 
-$sql = "SELECT * FROM tb_choferes WHERE nombre_chofer = '$nombre_chofer' or dni_chofer = '$dni_chofer'";
+$sql = "SELECT * FROM tb_choferes WHERE dni_chofer = '$dni_chofer'";
 $query = $pdo->prepare($sql);
 $query->execute();
 $choferes = $query->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($choferes as $chofer) {
-    $nombre_chofer_table = $chofer['nombre_chofer'];
     $dni_chofer_table = $chofer['dni_chofer'];
 }
-if (  (($nombre_chofer_table) == ($nombre_chofer) or ($dni_chofer_table) == ($dni_chofer))  ) {
+if (  (($dni_chofer_table) == ($dni_chofer))  ) {
     session_start();
-    $_SESSION['mensaje'] = "Este chofer Ya Existe En La Base De Datos";
+    $_SESSION['mensaje'] = "Este DNI Ya Existe En La Base De Datos";
     $_SESSION['icono'] = "error";
     header('Location: ' . $URL . '/choferes/');
 } else {

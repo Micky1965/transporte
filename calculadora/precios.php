@@ -76,7 +76,7 @@ foreach ($tarifas as $tarifa) {
                                             <?php
                                             if ($_POST) {
                                                 $viaje = $_POST["distancia"];
-                                                if ($viaje >= "0") {
+                                                if ($viaje > "0") {
                                                     $total_aproximado = $km_t1 * $viaje + $bandera_t1;
                                                     $total_aproximado2 = $km_t2 * $viaje + $bandera_t2;
                                                 } else {

@@ -30,11 +30,6 @@ include('../app/controllers/clientes/update_cliente.php');
                     <div class="card card-success">
                         <div class="card-header">
                             <h1 class="card-title"><b>Actualizar Datos del Cliente</b></h1>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                                </button>
-                            </div>
-
                         </div>
 
                         <div class="card-body" style="display: block;">
@@ -52,13 +47,13 @@ include('../app/controllers/clientes/update_cliente.php');
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="">Celular</label>
-                                                    <input type="text" name="celular_cliente" class="form-control" value="<?php echo $celular_cliente; ?>" required>
+                                                    <input type="number" onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'" / name="celular_cliente" class="form-control" value="<?php echo $celular_cliente; ?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Dirección</label>
-                                                    <input type="text" name="direccion_cliente" class="form-control" value="<?php echo $direccion_cliente; ?>" required>
+                                                    <input type="text" style="text-transform: uppercase;" name="direccion_cliente" class="form-control" value="<?php echo $direccion_cliente; ?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">

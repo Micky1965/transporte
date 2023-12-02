@@ -265,6 +265,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                             <li class="nav-item">
+                                <a href="<?php echo $URL; ?>/localidades" class="nav-link active">
+                                    <i class="nav-icon fas fa-map"></i>
+                                    <p>
+                                        Localidades
+                                    </p>
+                                </a>
+                            </li>
+                            
+                        
+                            <li class="nav-item">
                                 <a href="<?php echo $URL; ?>/calculadora/precios.php" class="nav-link active">
                                     <i class="nav-icon fas fa-calculator"></i>
                                     <p>
@@ -273,16 +283,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </a>
                             </li>
                                 
-                            <li class="nav-item">
-                                <a href="<?php echo $URL; ?>/localidades" class="nav-link active">
-                                    <i class="nav-icon fas fa-map"></i>
-                                    <p>
-                                        Localidades
-                                    </p>
-                                </a>
-                            </li>
-
-
+                            
                             <li class="nav-item">
                                 <a href="<?php echo $URL; ?>/calculadora" class="nav-link active">
                                     <i class="nav-icon fas fa-dollar-sign"></i>
@@ -397,4 +398,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- /.sidebar -->
         </aside>
         
+Swal.fire({
+  title: "Desea Salir del Programa ?",
+  text: "",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Sí"
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire({
+      title: "Cerrado!",
+      text: "Hasta Pronto, Que Descanses !",
+      icon: "success"
+    });
+  }
+});
     

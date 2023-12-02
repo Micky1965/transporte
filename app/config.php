@@ -30,7 +30,7 @@ if (isset($_SESSION['mensaje'])) {
                 icon: 'success',
                 title: '<?php echo $respuesta;?>',
                 showConfirmButton: false,
-                timer: 2500
+                timer: 3000
             })
         </script>
 <?php 
@@ -39,3 +39,4 @@ if (isset($_SESSION['mensaje'])) {
 }
 
 ?>
+

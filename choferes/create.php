@@ -28,12 +28,7 @@ include('../app/controllers/roles2/listado_roles2.php')
                 <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Registro de un Nuevo Chofer</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                                </button>
-                            </div>
-
+                            <h4>Registro de un Nuevo Chofer</h4>
                         </div>
 
                         <div class="card-body" style="display: block;">
@@ -44,7 +39,7 @@ include('../app/controllers/roles2/listado_roles2.php')
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Nombres / Apellidos <font color="red">*</font></label>
-                                                    <input type="text" style="text-transform: uppercase;" name="nombre_chofer" class="form-control" required>
+                                                    <input type="text" name="nombre_chofer" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">

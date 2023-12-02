@@ -3,7 +3,7 @@ include('../app/config.php');
 include('../layout/sesion.php');
 include('../layout/parte1.php');
 include('../app/controllers/clientes/listado_clientes.php');
-include('../app/controllers/moviles/listado_moviles.php');
+include('../app/controllers/moviles/listenservicio.php');
 
 ?>
 
@@ -96,12 +96,7 @@ include('../app/controllers/moviles/listado_moviles.php');
                 <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Registrar Pedido de Móvil</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                                </button>
-                            </div>
-
+                            <h4>Registrar Pedido de Móvil</h4>
                         </div>
 
                         <div class="card-body" style="display: block;">
@@ -124,7 +119,7 @@ include('../app/controllers/moviles/listado_moviles.php');
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="">Celular</label>
-                                                    <input type="text" name="celular" class="form-control" id="celular">
+                                                    <input type="number" name="celular" class="form-control" id="celular">
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
@@ -142,7 +137,15 @@ include('../app/controllers/moviles/listado_moviles.php');
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="">Móvil <font color="red">*</font></label>
-                                                    <input type="text" name="movil" class="form-control" id="movil" required>
+                                                    <!-- <input type="text" name="movil" class="form-control" id="movil" required> -->
+                                                    <select name="movil" id="movil" class="form-control">
+                                                        <?php
+                                                        foreach ($moviles_datos as $moviles_dato) { ?>
+                                                            <option value="<?php echo $moviles_dato['id_movil']; ?>"><?php echo $moviles_dato['nro_movil']; ?></option>
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">

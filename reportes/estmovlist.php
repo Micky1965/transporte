@@ -2,7 +2,7 @@
 include ('../app/config.php');
 include ('../layout/sesion.php');
 include ('../layout/parte1.php');
-include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
+include ('../app/controllers/moviles/listado_estadomoviles.php');
 
 ?>
 
@@ -36,39 +36,41 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
 
                         <div class="card-body" style="display: block;">
                         <div class="table table-responsive">
-                            <table id="table_estadomovil" class="table table-bordered table-striped">
+                            <table id="table_moviles" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
                                     <th><center>Nro</center></th>
                                     <th><center>Móvil</center></th>
+                                    <th><center>Marca</center></th>
                                     <th><center>Modelo</center></th>
                                     <th><center>Patente</center></th>
                                     <th><center>Hora Ingreso</center></th>
                                     <th><center>Fecha Ingreso</center></th>
-                                    <th><center>Hora Salida</center></th>
+                                    <th><center>Salida</center></th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 
                                 <?php
                                 $contador = 0;
-                                foreach ($estadomovil_datos as $estadomovil_dato){
-                                    $id_estadomovil = $estadomovil_dato['id_estadomovil']; ?>
+                                foreach ($moviles_datos as $moviles_dato){
+                                    $id_movil = $moviles_dato['id_movil']; ?>
                                 
                                     <tr>
                                         <td><center><?php echo $contador = $contador + 1;?></center></td>
                                         <?php
-                                        if ($estadomovil_dato['estado'] == 1) {?>
-                                            <td style="background-color: #90EE90;"><center><?php echo $estadomovil_dato['nro_movil'];?></center></td>
+                                        if ($moviles_dato['estado'] == 1) {?>
+                                            <td style="background-color: #90EE90;"><center><?php echo $moviles_dato['nro_movil'];?></center></td>
                                         <?php
                                         }else{ ?>
-                                            <td style="background-color: #F6635C;"><center><?php echo $estadomovil_dato['nro_movil'];?></center></td>
+                                            <td style="background-color: #F6635C;"><center><?php echo $moviles_dato['nro_movil'];?></center></td>
                                         <?php }?>
-                                        <td><?php echo $estadomovil_dato['modelo_movil'];?></td>
-                                        <td><?php echo $estadomovil_dato['patente_movil'];?></td>
-                                        <td><?php echo $estadomovil_dato['entrada'];?></td>
-                                        <td><?php echo $estadomovil_dato['fecha'];?></td>
-                                        <td><?php echo $estadomovil_dato['salida'];?></td>
+                                        <td><?php echo $moviles_dato['marca_movil'];?></td>
+                                        <td><?php echo $moviles_dato['modelo_movil'];?></td>
+                                        <td><?php echo $moviles_dato['patente_movil'];?></td>
+                                        <td><?php echo $moviles_dato['entrada'];?></td>
+                                        <td><?php echo $moviles_dato['fecha'];?></td>
+                                        <td><?php echo $moviles_dato['salida'];?></td>
                                     </tr>
                                     <?php 
                                     }
@@ -94,7 +96,7 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
 
 <script>
     $(function() {
-        $("#table_estadomovil").DataTable({
+        $("#table_moviles").DataTable({
             "pageLength": 6,
             "language": {
                 "emptyTable": "No hay información",
@@ -131,6 +133,6 @@ include ('../app/controllers/estadomoviles/listado_estadomoviles.php');
                     extend: 'print'
                 }]
             }, ],
-        }).buttons().container().appendTo('#table_estadomovil_wrapper .col-md-6:eq(0)');
+        }).buttons().container().appendTo('#table_moviles_wrapper .col-md-6:eq(0)');
     });
 </script>

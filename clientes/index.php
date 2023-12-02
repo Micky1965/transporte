@@ -29,7 +29,7 @@ include('../app/controllers/clientes/listado_clientes.php');
                 <div class="col-md-12">
                     <div class="card card-outline card-secondary">
                         <div class="card-header">
-                            <h3 class="card-title"><a href="../reportes/clienteslist.php" class="link"><b>Listado Completo de Clientes</b></a></h3>
+                            <h5><a href="../reportes/clienteslist.php" class="link"><b>Listado Completo de Clientes</b></a></h5>
                         </div>
 
                         <div class="card-body" style="display: block;">

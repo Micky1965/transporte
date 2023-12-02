@@ -66,6 +66,7 @@ include ('../app/controllers/moviles/listado_moviles.php');
                                         <td><?php echo $moviles_dato['licencia'];?></td>
                                         <td><?php echo $moviles_dato['nro'];?></td>
                                         <td><?php echo $moviles_dato['incorporacion'];?></td>
+                                        <td>
                                     </tr>
                                     <?php
                                 }

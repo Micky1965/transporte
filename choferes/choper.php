@@ -32,10 +32,6 @@ include ('../app/controllers/roles2/listado_roles2.php');
                     <div class="card card-outline card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Listado de Choferes</h3> 
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                                </button>
-                            </div>
                         </div>
 
                         <div class="card-body" style="display: block;">

@@ -30,11 +30,6 @@ include('../app/controllers/pedidos/update_pedido.php');
                     <div class="card card-success">
                         <div class="card-header">
                             <h1 class="card-title"><b>Actualizar Datos del pedido</b></h1>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                                </button>
-                            </div>
-
                         </div>
 
                         <div class="card-body" style="display: block;">

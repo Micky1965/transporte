@@ -3,27 +3,24 @@
 include('../../config.php');
 
 $nombre_cliente = $_POST['nombre_cliente'];
-$nombre_cliente = strtoupper($nombre_cliente);
 $celular_cliente = $_POST['celular_cliente'];
 $direccion_cliente = $_POST['direccion_cliente'];
 $direccion_cliente = strtoupper($direccion_cliente);
 $obs_cliente = $_POST['obs_cliente'];
 $referencia_cliente = $_POST['referencia_cliente'];
 
-$sql = "SELECT * FROM tb_clientes WHERE nombre_cliente = '$nombre_cliente' or direccion_cliente = '$direccion_cliente'";
+$sql = "SELECT * FROM tb_clientes WHERE direccion_cliente = '$direccion_cliente'";
 $query = $pdo->prepare($sql);
 $query->execute();
 $clientes = $query->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($clientes as $cliente) {
-    $nombre_cliente_table = $cliente['nombre_cliente'];
     $direccion_cliente_table = $cliente['direccion_cliente'];
 }
-if (  (($nombre_cliente_table) == ($nombre_cliente) 
-    or ($direccion_cliente_table) == ($direccion_cliente))  ) {
+if (  (($direccion_cliente_table) == ($direccion_cliente))  ) {
        
     session_start();
-    $_SESSION['mensaje'] = "Este cliente Ya Existe En La Base De Datos";
+    $_SESSION['mensaje'] = "Esta Dirección Ya Existe En La Base De Datos";
     $_SESSION['icono'] = "error";
     header('Location: ' . $URL . '/clientes/');
 } else {

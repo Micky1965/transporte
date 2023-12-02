@@ -30,11 +30,7 @@ include ('../app/controllers/roles/listado_roles.php');
                 <div class="col-md-12">
                     <div class="card card-outline card-secondary">
                         <div class="card-header">
-                            <h3 class="card-title">Listado de Usuarios</h3> 
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                                </button>
-                            </div>
+                            <h4>Listado de Usuarios</h4> 
                         </div>
 
                         <div class="card-body" style="display: block;">

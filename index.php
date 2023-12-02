@@ -8,6 +8,8 @@ include('app/controllers/choferes/listado_choferes.php');
 include('app/controllers/clientes/listado_clientes.php');
 include('app/controllers/moviles/listado_moviles.php');
 include('app/controllers/pedidos/listado_pedidos.php');
+include('app/controllers/localidades/listado_localidades.php');
+include('app/controllers/calculadora/listado_tarifas.php');
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -88,7 +90,7 @@ include('app/controllers/pedidos/listado_pedidos.php');
                 }
                 ?>
                 <h3><?php echo $contador_de_moviles; ?></h3>
-                <p>Móviles Registrados</p>
+                <p>Vehículos Registrados</p>
               </div>
               <a href="<?php echo $URL; ?>/moviles/create.php">
                 <div class="icon">
@@ -97,6 +99,30 @@ include('app/controllers/pedidos/listado_pedidos.php');
               </a>
               <a href="<?php echo $URL; ?>/moviles" class="small-box-footer">
                 Listado de Móviles <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+
+
+          <div class="col-lg-3 col-6">
+            <div class="small-box bg-primary">
+              <div class="inner">
+                <?php
+                $contador_de_clientes = 0;
+                foreach ($clientes_datos as $clientes_dato) {
+                  $contador_de_clientes = $contador_de_clientes + 1;
+                }
+                ?>
+                <h3><?php echo $contador_de_clientes; ?></h3>
+                <p>Clientes Registrados</p>
+              </div>
+              <a href="<?php echo $URL; ?>/clientes/create.php">
+                <div class="icon">
+                  <i class="fas fa-male"></i>
+                </div>
+              </a>
+              <a href="<?php echo $URL; ?>/clientes" class="small-box-footer">
+                Listado de Clientes <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
           </div>
@@ -127,24 +153,72 @@ include('app/controllers/pedidos/listado_pedidos.php');
 
 
           <div class="col-lg-3 col-6">
+            <div class="small-box bg-info">
+              <div class="inner">
+                <?php
+                $contador_de_moviles = 0;
+                foreach ($moviles_datos as $moviles_dato) {
+                  $contador_de_moviles = $contador_de_moviles + 1;
+                }
+                ?>
+                <h3><?php echo $contador_de_moviles; ?></h3>
+                <p>Estado de los Móviles</p>
+              </div>
+              <a href="<?php echo $URL; ?>/moviles/index2.php">
+                <div class="icon">
+                  <i class="fas fa-car-side"></i>
+                </div>
+              </a>
+              <a href="<?php echo $URL; ?>/moviles/index2.php" class="small-box-footer">
+                Estado Móviles <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+
+
+          <div class="col-lg-3 col-6">
+            <div class="small-box bg-success">
+              <div class="inner">
+                <?php
+                $contador_de_localidades = 0;
+                foreach ($localidades_datos as $localidades_dato) {
+                  $contador_de_localidades = $contador_de_localidades + 1;
+                }
+                ?>
+                <h3><?php echo $contador_de_localidades; ?></h3>
+                <p>Localidades</p>
+              </div>
+              <a href="<?php echo $URL; ?>/localidades/create.php">
+                <div class="icon">
+                  <i class="fas fa-map"></i>
+                </div>
+              </a>
+              <a href="<?php echo $URL; ?>/localidades/index.php" class="small-box-footer">
+                Listado de Localidades <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+
+
+          <div class="col-lg-3 col-6">
             <div class="small-box bg-warning">
               <div class="inner">
                 <?php
-                $contador_de_clientes = 0;
-                foreach ($clientes_datos as $clientes_dato) {
-                  $contador_de_clientes = $contador_de_clientes + 1;
+                $contador_de_tarifas = 0;
+                foreach ($tarifas_datos as $tarifas_dato) {
+                  $contador_de_tarifas = $contador_de_tarifas + 1;
                 }
                 ?>
-                <h3><?php echo $contador_de_clientes; ?></h3>
-                <p>Clientes Registrados</p>
+                <h3><?php echo $contador_de_tarifas; ?></h3>
+                <p>Calcular Precio del Viaje</p>
               </div>
-              <a href="<?php echo $URL; ?>/clientes/create.php">
+              <a href="<?php echo $URL; ?>/calculadora/precios.php">
                 <div class="icon">
-                  <i class="fas fa-male"></i>
+                  <i class="fas fa-calculator"></i>
                 </div>
               </a>
-              <a href="<?php echo $URL; ?>/clientes" class="small-box-footer">
-                Listado de Clientes <i class="fas fa-arrow-circle-right"></i>
+              <a href="<?php echo $URL; ?>/calculadora/index.php" class="small-box-footer">
+                Actualizar Tarifas <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
           </div>

@@ -31,10 +31,6 @@ include('../app/controllers/roles/listado_roles.php');
                     <div class="card card-success">
                         <div class="card-header">
                             <h3 class="card-title"><b>Actualizar Datos del Usuario</b></h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                                </button>
-                            </div>
                         </div>
 
                         <div class="card-body" style="display: block;">
@@ -43,37 +39,31 @@ include('../app/controllers/roles/listado_roles.php');
                                     <form action="../app/controllers/usuarios/update.php" method="post">
                                         <input type="text" name="id_user" value="<?php echo $id_usuario_get; ?>" hidden>
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="">Usuario</label>
                                                     <input type="text" name="nick_user" class="form-control" value="<?php echo $nick_user; ?>" required>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-8">
                                                 <div class="form-group">
                                                     <label for="">Nombre Completo</label>
                                                     <input type="text" name="nombre_user" class="form-control" value="<?php echo $nombre_user; ?>" required>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="">Dni</label>
                                                     <input type="number" name="dni_user" class="form-control" value="<?php echo $dni_user; ?>" required>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="">Celular</label>
                                                     <input type="number" name="celular_user" class="form-control" value="<?php echo $celular_user; ?>" required>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="">Dirección</label>
-                                                    <input type="text" name="direccion_user" class="form-control" value="<?php echo $direccion_user; ?>" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="">Rol del usuario</label>
                                                     <select name="rol" id="" class="form-control">
@@ -90,10 +80,16 @@ include('../app/controllers/roles/listado_roles.php');
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="">Contraseña</label>
                                                     <input type="text" name="password_user" class="form-control" value="<?php echo $password_user; ?>">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-group">
+                                                    <label for="">Dirección</label>
+                                                    <input type="text" name="direccion_user" class="form-control" value="<?php echo $direccion_user; ?>" required>
                                                 </div>
                                             </div>
                                         </div>

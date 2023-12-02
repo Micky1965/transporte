@@ -39,6 +39,7 @@ include ('../app/controllers/moviles/listfueraserv.php');
                                 <thead>
                                 <tr>
                                     <th><center>Nro</center></th>
+                                    <th><center>Marca</center></th>
                                     <th><center>Móvil</center></th>
                                     <th><center>Modelo</center></th>
                                     <th><center>Patente</center></th>
@@ -60,6 +61,7 @@ include ('../app/controllers/moviles/listfueraserv.php');
                                         }else{ ?>
                                             <td style="background-color: #F6635C;"><center><?php echo $moviles_dato['nro_movil'];?></center></td>
                                         <?php }?>
+                                        <td><?php echo $moviles_dato['marca_movil'];?></td>
                                         <td><?php echo $moviles_dato['modelo_movil'];?></td>
                                         <td><?php echo $moviles_dato['patente_movil'];?></td>
                                         <td><?php echo $moviles_dato['salida'];?></td>

@@ -31,11 +31,6 @@ include('../app/controllers/roles2/listado_roles2.php');
                     <div class="card card-success">
                         <div class="card-header">
                             <h1 class="card-title"><b>Actualizar Datos del Chofer</b></h1>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                                </button>
-                            </div>
-
                         </div>
 
                         <div class="card-body" style="display: block;">

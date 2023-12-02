@@ -5,6 +5,7 @@ include('../../config.php');
 $nombre_cliente = $_POST['nombre_cliente'];
 $celular_cliente = $_POST['celular_cliente'];
 $direccion_cliente = $_POST['direccion_cliente'];
+$direccion_cliente = strtoupper($direccion_cliente);
 $referencia_cliente = $_POST['referencia_cliente'];
 $obs_cliente = $_POST['obs_cliente'];
 $id_cliente = $_POST['id_cliente'];
