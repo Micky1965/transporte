@@ -31,9 +31,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="<?php echo $URL; ?>/public/templates/AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
 
 </head>
+
 <body class="hold-transition sidebar-mini">
 
-<div class="wrapper">
+    <div class="wrapper">
 
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -43,7 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <span class="nav-link"><b> Hola <?php echo $nick_sesion; ?>, Bienvenido y buena jornada laboral !</b></span> 
+                    <span class="nav-link"><b> Hola <?php echo $nick_sesion; ?>, Bienvenido y buena jornada laboral !</b></span>
                 </li>
             </ul>
 
@@ -59,7 +60,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
         </nav>
         <!-- /.navbar -->
-    
+
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
@@ -128,7 +129,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </ul>
                             </li>
 
-                            
+
                             <li class="nav-item">
                                 <a href="#" class="nav-link active">
                                     <i class="nav-icon fas fa-car"></i>
@@ -183,7 +184,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <a href="#" class="nav-link active">
                                     <i class="nav-icon fas fa-user-friends"></i>
                                     <p>
-                                        Choferes
+                                        Choferes--Propietarios
                                         <i class="right fas fa-angle-left"></i>
                                     </p>
                                 </a>
@@ -191,13 +192,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <li class="nav-item">
                                         <a href="<?php echo $URL; ?>/choferes/create.php" class="nav-link">
                                             <i class="nav-icon fas fa-user"></i>
-                                            <p>Agregar Chofer</p>
+                                            <p>Registrar Nuevo</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="<?php echo $URL; ?>/choferes" class="nav-link">
                                             <i class="nav-icon fas fa-list"></i>
-                                            <p>Listado de Choferes</p>
+                                            <p>Listado Completo</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="<?php echo $URL; ?>/choferes/estado_choferes.php" class="nav-link">
+                                            <i class="nav-icon fas fa-user"></i>
+                                            <p>Disponibilidad</p>
                                         </a>
                                     </li>
                                 </ul>
@@ -272,8 +279,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </p>
                                 </a>
                             </li>
-                            
-                        
+
+
                             <li class="nav-item">
                                 <a href="<?php echo $URL; ?>/calculadora/precios.php" class="nav-link active">
                                     <i class="nav-icon fas fa-calculator"></i>
@@ -282,8 +289,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </p>
                                 </a>
                             </li>
-                                
-                            
+
+
                             <li class="nav-item">
                                 <a href="<?php echo $URL; ?>/calculadora" class="nav-link active">
                                     <i class="nav-icon fas fa-dollar-sign"></i>
@@ -300,8 +307,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <p>Cerrar Sesión</p>
                                 </a>
                             </li>
-        
-                            
+
+
                         <?php
                         }
                         if ($rol_sesion == 2) { ?>
@@ -397,22 +404,3 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
             <!-- /.sidebar -->
         </aside>
-        
-Swal.fire({
-  title: "Desea Salir del Programa ?",
-  text: "",
-  icon: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#3085d6",
-  cancelButtonColor: "#d33",
-  confirmButtonText: "Sí"
-}).then((result) => {
-  if (result.isConfirmed) {
-    Swal.fire({
-      title: "Cerrado!",
-      text: "Hasta Pronto, Que Descanses !",
-      icon: "success"
-    });
-  }
-});
-    

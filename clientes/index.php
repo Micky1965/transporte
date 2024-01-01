@@ -29,7 +29,7 @@ include('../app/controllers/clientes/listado_clientes.php');
                 <div class="col-md-12">
                     <div class="card card-outline card-secondary">
                         <div class="card-header">
-                            <h5><a href="../reportes/clienteslist.php" class="link"><b>Listado Completo de Clientes</b></a></h5>
+                            <h5><a href="../reportes/clienteslist.php" class="link"><b>Guardar Listado de Clientes</b></a></h5>
                         </div>
 
                         <div class="card-body" style="display: block;">
@@ -39,8 +39,8 @@ include('../app/controllers/clientes/listado_clientes.php');
                                         <tr>
                                             <th><center>Nro</center></th>
                                             <th><center>Nombre</center></th>
-                                            <th><center>Celular</center></th>
                                             <th><center>Dirección</center></th>
+                                            <th><center>Celular</center></th>
                                             <th><center>Referencias</center></th>
                                             <th><center>Observaciones</center></th>
                                             <th><center>Acciones</center></th>
@@ -56,8 +56,13 @@ include('../app/controllers/clientes/listado_clientes.php');
                                                     <center><?php echo $contador = $contador + 1; ?></center>
                                                 </td>
                                                 <td><?php echo $clientes_dato['nombre']; ?></td>
-                                                <td><?php echo $clientes_dato['celular']; ?></td>
                                                 <td><?php echo $clientes_dato['direccion']; ?></td>
+                                                <td>
+                                                    <a href="https://wa.me/54<?php echo $clientes_dato['celular'];?>" target="_blank" class="btn btn-success">
+                                                       <i class="fas fa-phone"></i>
+                                                       <?php echo $clientes_dato['celular'];?>
+                                                    </a>
+                                                </td>
                                                 <td><?php echo $clientes_dato['referencia']; ?></td>
                                                 <td><?php echo $clientes_dato['obs']; ?></td>
                                                 <td>

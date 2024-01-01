@@ -66,13 +66,7 @@ include('../app/controllers/choferes/show_chofer.php');
                                                 <input type="text" name="direccion_chofer" class="form-control" value="<?php echo $direccion_chofer; ?>" disabled>
                                             </div>
                                         </div>
-                                        <div class="col-md-2">
-                                            <div class="form-group">
-                                                <label for="">Móvil</label>
-                                                <input type="text" name="movil" class="form-control" value="<?php echo $movil; ?>" disabled>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="">Observaciones</label>
                                                 <input type="text" name="obs" class="form-control" value="<?php echo $obs; ?>" disabled>

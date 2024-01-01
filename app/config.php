@@ -15,7 +15,8 @@ try {
     echo "<script>alert('Error al conectar a la base de datos')</script>";
 }
 
-$URL = "http://localhost/www.transporte.com";
+$URL = "http://192.168.100.84/transporte";
+//$URL = "http://localhost/transporte";
 
 date_default_timezone_set("America/Argentina/Salta");
 $fechaHora = date('Y/m/d H:i:s');

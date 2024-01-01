@@ -3,29 +3,33 @@ include('../app/config.php');
 include('../layout/sesion.php');
 include('../layout/parte1.php');
 
-$query2 = $pdo->prepare("SELECT * FROM tb_tarifas");
-$query2->execute();
-$tarifas = $query2->fetchAll(PDO::FETCH_ASSOC);
-foreach ($tarifas as $tarifa) {
-    $bandera_t1 = $tarifa['bandera_t1'];
-    $km_t1 = $tarifa['km_t1'];
-    $bandera_t2 = $tarifa['bandera_t2'];
-    $km_t2 = $tarifa['km_t2'];
-    $viaje = $tarifa["distancia"];
+// Verificar si los datos ya están en caché
+if (!isset($tarifas)) {
+// Realizar la consulta solo si no están en caché
+    $query2 = $pdo->prepare("SELECT * FROM tb_tarifas");
+    $query2->execute();
+    $tarifas = $query2->fetchAll(PDO::FETCH_ASSOC);
 }
+// Asignar los valores directamente a las variables
+$bandera_t1 = $tarifas[0]['bandera_t1'];
+$km_t1 = $tarifas[0]['km_t1'];
+$bandera_t2 = $tarifas[0]['bandera_t2'];
+$km_t2 = $tarifas[0]['km_t2'];
+$viaje = $tarifas[0]["distancia"];
+$error_message = "El Kilometraje debe ser Mayor que 0";
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
-        
+
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Main content -->
@@ -41,7 +45,7 @@ foreach ($tarifas as $tarifa) {
                                 </div>
                                 <br>
                                 <form action="precios.php" method="POST">
-                                    
+
                                     <div class="row">
                                         <div class="col-3">
                                             <div class="form-group">
@@ -67,23 +71,24 @@ foreach ($tarifas as $tarifa) {
                                                 <input type="number" class="form-control" style="text-align: center; font-weight:bold; background-color:#4682B4; color:#FFFFFF" value="<?php echo $km_t2; ?>" disabled>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="col-3"><br><br>
                                             <div class="form-group">
                                                 <label for="">Calcular Precio</label>
                                                 <input type="number" class="form-control" name="distancia" style="text-align: center; font-weight:bold; background-color:#E8F3D6" placeholder="Ingrese los Kms">
                                             </div>
                                             <?php
+                                            
                                             if ($_POST) {
                                                 $viaje = $_POST["distancia"];
-                                                if ($viaje > "0") {
-                                                    $total_aproximado = $km_t1 * $viaje + $bandera_t1;
-                                                    $total_aproximado2 = $km_t2 * $viaje + $bandera_t2;
-                                                } else {
-                                                    print "El Kilometraje debe ser Mayor que 0";
-                                                }
+                                            if ($viaje > "0") {
+                                                $total_aproximado = $km_t1 * $viaje + $bandera_t1;
+                                                $total_aproximado2 = $km_t2 * $viaje + $bandera_t2;
+                                            } else {
+                                                echo $error_message;
                                             }
-                                            ?>
+                                        }
+                                        ?>
                                         </div>
                                         <div class="col-3"><br><br>
                                             <div class="form-group">
@@ -97,7 +102,7 @@ foreach ($tarifas as $tarifa) {
                                                 <input type="number" class="form-control" id="total_aproximado2" style="text-align: center; background-color:#4682B4; color:#FFFFFF" value="<?php echo $total_aproximado2; ?>" disabled>
                                             </div>
                                         </div>
-                                        
+
                                     </div><br><br>
                                     <p><input type="submit" class="btn btn-warning btn-lg" value="Calcular"></p>
                                 </form>
@@ -112,4 +117,5 @@ foreach ($tarifas as $tarifa) {
     </div>
 </body>
 <?php include('../layout/parte2.php'); ?>
+
 </html>

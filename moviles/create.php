@@ -3,6 +3,7 @@ include('../app/config.php');
 include('../layout/sesion.php');
 include('../layout/parte1.php');
 include ('../app/controllers/moviles/listado_moviles.php');
+include ('../app/controllers/choferes/listdisponibles.php');
 
 ?>
 
@@ -91,12 +92,30 @@ include ('../app/controllers/moviles/listado_moviles.php');
                                                 <div class="form-group">
                                                     <label for="">Chofer 1</label>
                                                     <input type="text" name="chofer1_movil" class="form-control">
+                                                    <!-- <select name="chofer1_movil" id="chofer1_movil" class="form-control">
+                                                        <option selected="true" disabled="disabled">Seleccione Chofer 1</option>
+                                                        <?php
+                                                        foreach ($choferes_datos as $choferes_dato) { ?>
+                                                            <option value="<?php echo $choferes_dato['id_chofer']; ?>"><?php echo $choferes_dato['nombre_chofer']; ?></option>
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                    </select> -->
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Chofer 2</label>
                                                     <input type="text" name="chofer2_movil" class="form-control">
+                                                    <!-- <select name="chofer2_movil" id="chofer2_movil" class="form-control">
+                                                        <option selected="true" disabled="disabled">Seleccione Chofer 2</option>
+                                                        <?php
+                                                        foreach ($choferes_datos as $choferes_dato) { ?>
+                                                            <option value="<?php echo $choferes_dato['id_chofer']; ?>"><?php echo $choferes_dato['nombre_chofer']; ?></option>
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                    </select> -->
                                                 </div>
                                             </div>
                                         </div>

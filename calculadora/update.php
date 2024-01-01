@@ -1,8 +1,8 @@
 <?php
-include('../app/config.php');
-include('../layout/sesion.php');
-include('../layout/parte1.php');
-include('../app/controllers/calculadora/update_tarifa.php');
+include_once '../app/config.php';
+include_once '../layout/sesion.php';
+include_once '../layout/parte1.php';
+include_once '../app/controllers/calculadora/update_tarifa.php';
 
 ?>
 
@@ -13,59 +13,54 @@ include('../app/controllers/calculadora/update_tarifa.php');
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
-
     <!-- Main content -->
     <div class="content">
         <div class="container-fluid">
-
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-success">
                         <div class="card-header">
                             <h3 class="card-title">Actualización de Tarifas</h3>
                         </div>
-
                         <div class="card-body" style="display: block;">
                             <div class="row">
                                 <div class="col-md-12">
                                     <form action="../app/controllers/calculadora/update.php" method="post">
-                                        <input type="text" name="id_tarifa" value="<?php echo $id_tarifa_get; ?>" hidden>
+                                    <input type="hidden" name="id_tarifa" value="<?php echo htmlspecialchars($id_tarifa_get); ?>">
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="">Bajada de Bandera T1</label>
-                                                    <input type="text" name="bandera_t1" class="form-control" value="<?php echo $bandera_t1; ?>" required>
+                                                    <input type="text" name="bandera_t1" class="form-control" value="<?php echo htmlspecialchars($bandera_t1); ?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="">Precio del Km T1</label>
-                                                    <input type="text" name="km_t1" class="form-control" value="<?php echo $km_t1; ?>" required>
+                                                    <input type="text" name="km_t1" class="form-control" value="<?php echo htmlspecialchars($km_t1); ?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="">Bajada de Bandera T2</label>
-                                                    <input type="text" name="bandera_t2" class="form-control" value="<?php echo $bandera_t2; ?>" required>
+                                                    <input type="text" name="bandera_t2" class="form-control" value="<?php echo htmlspecialchars($bandera_t2); ?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="">Precio del Km T2</label>
-                                                    <input type="text" name="km_t2" class="form-control" value="<?php echo $km_t2; ?>" required>
+                                                    <input type="text" name="km_t2" class="form-control" value="<?php echo htmlspecialchars($km_t2); ?>" required>
                                                 </div>
                                             </div>
                                             <!-- <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Calcular Precio</label>
-                                                    <input type="text" name="distancia" class="form-control" value="<?php echo $distancia; ?>" disabled>
+                                                    <input type="text" name="distancia" class="form-control" value="<?php echo htmlspecialchars($distancia); ?>" disabled>
                                                 </div>
                                             </div> -->
                                         </div>

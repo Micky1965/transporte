@@ -45,7 +45,6 @@ include ('../app/controllers/choferes/listado_choferes.php');
                                     <th><center>Rol del Conductor</center></th>
                                     <th><center>Dirección</center></th>
                                     <th><center>Observ</center></th>
-                                    <th><center>Móvil</center></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -61,7 +60,6 @@ include ('../app/controllers/choferes/listado_choferes.php');
                                         <td><?php echo $choferes_dato['rol2'];?></td>
                                         <td><?php echo $choferes_dato['direccion'];?></td>
                                         <td><?php echo $choferes_dato['obs'];?></td>
-                                        <td><?php echo $choferes_dato['movil'];?></td>
                                     </tr>
                                     <?php
                                 }
@@ -100,6 +98,7 @@ include ('../app/controllers/choferes/listado_choferes.php');
                 "lengthMenu": "Mostrar _MENU_ Choferes",
                 "loadingRecords": "Cargando...",
                 "processing": "Procesando...",
+                
                 "search": "Buscador:",
                 "zeroRecords": "Sin resultados encontrados",
                 "paginate": {
@@ -110,7 +109,7 @@ include ('../app/controllers/choferes/listado_choferes.php');
                 }
             },
             "responsive": true, "lengthChange": true, "autoWidth": false,
-            
+
             buttons: [{
                 extend: 'collection',
                 text: 'Reportes',
@@ -125,6 +124,7 @@ include ('../app/controllers/choferes/listado_choferes.php');
                 ]
             },
             ],
+            
         }).buttons().container().appendTo('#table_choferes_wrapper .col-md-6:eq(0)');
     });
 </script>

@@ -30,7 +30,7 @@ include ('../app/controllers/roles/listado_roles.php');
                 <div class="col-md-12">
                     <div class="card card-outline card-secondary">
                         <div class="card-header">
-                            <h4>Listado de Usuarios</h4> 
+                            <h3 class="card-title"><a href="../reportes/usuarioslist.php" class="link"><b>Guardar Lista de Usuarios</b></a></h3>
                         </div>
 
                         <div class="card-body" style="display: block;">
@@ -40,6 +40,7 @@ include ('../app/controllers/roles/listado_roles.php');
                                     <th><center>Nro</center></th>
                                     <th><center>Usuario</center></th>
                                     <th><center>Nombre</center></th>
+                                    <th><center>Celular</center></th>
                                     <th><center>Rol del Usuario</center></th>
                                     <th><center>Acciones</center></th>
                                 </tr>
@@ -53,6 +54,12 @@ include ('../app/controllers/roles/listado_roles.php');
                                         <td><center><?php echo $contador = $contador + 1;?></center></td>
                                         <td><?php echo $usuarios_dato['nick'];?></td>
                                         <td><?php echo $usuarios_dato['nombres'];?></td>
+                                        <td>
+                                            <a href="https://wa.me/54<?php echo $usuarios_dato['celular'];?>" target="_blank" class="btn btn-success">
+                                            <i class="fas fa-phone"></i>
+                                            <?php echo $usuarios_dato['celular'];?>
+                                            </a>
+                                        </td>
                                         <td><?php echo $usuarios_dato['rol'];?></td>
                                         <td>
                                             <center>

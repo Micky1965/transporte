@@ -11,6 +11,10 @@ $movil = $_POST['movil'];
 $observaciones = $_POST['observaciones'];
 $id_pedido = $_POST['id_pedido'];
 
+$sql = "SELECT * FROM tb_moviles";
+$query = $pdo->prepare($sql);
+$query->execute();
+$moviles = $query->fetchAll(PDO::FETCH_ASSOC);
 
 $sentencia = $pdo->prepare("UPDATE tb_pedidos SET direccion=:direccion, nombre=:nombre, celular=:celular, destino=:destino, 
                                 referencia=:referencia, movil=:movil, observaciones=:observaciones 

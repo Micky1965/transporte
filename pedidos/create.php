@@ -4,9 +4,7 @@ include('../layout/sesion.php');
 include('../layout/parte1.php');
 include('../app/controllers/clientes/listado_clientes.php');
 include('../app/controllers/moviles/listenservicio.php');
-
 ?>
-
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -45,23 +43,9 @@ include('../app/controllers/moviles/listenservicio.php');
                                                     $id_cliente = $clientes_dato['id_cliente']; ?>
                                                     <tr>
                                                         <td>
-                                                            <button class="btn btn-info btn-sm" id="btn_escoger<?php echo $id_cliente; ?>">
+                                                            <button class="btn btn-info btn-sm btn_escoger" data-direccion="<?php echo $clientes_dato['direccion']; ?>" data-nombre="<?php echo $clientes_dato['nombre']; ?>" data-celular="<?php echo $clientes_dato['celular']; ?>" data-referencia="<?php echo $clientes_dato['referencia']; ?>">
                                                                 Escoger
                                                             </button>
-                                                            <script>
-                                                                $('#btn_escoger<?php echo $id_cliente; ?>').click(function() {
-
-                                                                    var direccion = "<?php echo $clientes_dato['direccion']; ?>";
-                                                                    $('#direccion').val(direccion);
-                                                                    var nombre = "<?php echo $clientes_dato['nombre']; ?>";
-                                                                    $('#nombre').val(nombre);
-                                                                    var celular = "<?php echo $clientes_dato['celular']; ?>";
-                                                                    $('#celular').val(celular);
-                                                                    var referencia = "<?php echo $clientes_dato['referencia']; ?>";
-                                                                    $('#referencia').val(referencia);
-                                                                    $('#modal-listacli').modal('toggle');
-                                                                });
-                                                            </script>
                                                         </td>
                                                         <td><?php echo $clientes_dato['direccion']; ?></td>
                                                         <td><?php echo $clientes_dato['nombre']; ?></td>
@@ -86,19 +70,15 @@ include('../app/controllers/moviles/listenservicio.php');
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
-
     <!-- Main content -->
     <div class="content">
         <div class="container-fluid">
-
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
                             <h4>Registrar Pedido de Móvil</h4>
                         </div>
-
                         <div class="card-body" style="display: block;">
                             <div class="row">
                                 <div class="col-md-12">
@@ -137,15 +117,16 @@ include('../app/controllers/moviles/listenservicio.php');
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="">Móvil <font color="red">*</font></label>
-                                                    <!-- <input type="text" name="movil" class="form-control" id="movil" required> -->
-                                                    <select name="movil" id="movil" class="form-control">
+                                                    <input type="text" name="movil" class="form-control" id="movil" required>
+
+                                                    <!-- <select name="movil" id="movil" class="form-control">
                                                         <?php
                                                         foreach ($moviles_datos as $moviles_dato) { ?>
                                                             <option value="<?php echo $moviles_dato['id_movil']; ?>"><?php echo $moviles_dato['nro_movil']; ?></option>
                                                         <?php
                                                         }
                                                         ?>
-                                                    </select>
+                                                    </select> -->
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -166,22 +147,30 @@ include('../app/controllers/moviles/listenservicio.php');
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
-
             <!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-
 <?php include('../layout/parte2.php'); ?>
-
 <script>
     $(function() {
+        $(".btn_escoger").click(function() {
+            var direccion = $(this).data("direccion");
+            var nombre = $(this).data("nombre");
+            var celular = $(this).data("celular");
+            var referencia = $(this).data("referencia");
+            $('#direccion').val(direccion);
+            $('#nombre').val(nombre);
+            $('#celular').val(celular);
+            $('#referencia').val(referencia);
+            $('#modal-listacli').modal('toggle');
+        });
+
         $("#table_clientes").DataTable({
             "pageLength": 3,
             "language": {
@@ -206,7 +195,7 @@ include('../app/controllers/moviles/listenservicio.php');
             "responsive": true,
             "lengthChange": true,
             "autoWidth": false,
-
         }).buttons().container().appendTo('#table_clientes_wrapper .col-md-6:eq(0)');
     });
 </script>
+

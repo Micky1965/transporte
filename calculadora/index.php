@@ -80,4 +80,3 @@ include ('../app/controllers/calculadora/listado_tarifas.php');
 
 <?php include ('../layout/mensajes.php'); ?>
 <?php include ('../layout/parte2.php'); ?>
-

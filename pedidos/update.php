@@ -3,6 +3,7 @@ include('../app/config.php');
 include('../layout/sesion.php');
 include('../layout/parte1.php');
 include('../app/controllers/pedidos/update_pedido.php');
+include('../app/controllers/moviles/listenservicio.php');
 
 ?>
 

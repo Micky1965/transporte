@@ -1,11 +1,9 @@
 <?php
-include ('../app/config.php');
-include ('../layout/sesion.php');
-include ('../layout/parte1.php');
-include ('../app/controllers/moviles/listenservicio.php');
-
+include('../app/config.php');
+include('../layout/sesion.php');
+include('../layout/parte1.php');
+include('../app/controllers/moviles/listenservicio.php');
 ?>
-
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -13,18 +11,14 @@ include ('../app/controllers/moviles/listenservicio.php');
         <div class="container-fluid">
             <div class="row mb-0">
                 <div class="col-sm-12">
-                    
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
-
     <!-- Main content -->
     <div class="content">
         <div class="container-fluid">
-
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-outline card-success">
@@ -33,7 +27,6 @@ include ('../app/controllers/moviles/listenservicio.php');
                             <div style="width: 30px"></div> 
                             <a href="../pedidos/index.php" class="btn btn-info"><b>Volver</b></a> 
                         </div>
-
                         <div class="card-body" style="display: block;">
                             <table id="table_moviles" class="table table-bordered table-striped">
                                 <thead>
@@ -70,22 +63,18 @@ include ('../app/controllers/moviles/listenservicio.php');
                                     </tr>
                                     <?php
                                 }
-                                
                                 ?>
                                 </tbody>
                             </table>
-                            
                         </div>
                     </div>
                 </div>
             </div>
-
             <!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-
-<?php include ('../layout/mensajes.php'); ?>
-<?php include ('../layout/parte2.php'); ?>
+<?php include('../layout/mensajes.php'); ?>
+<?php include('../layout/parte2.php'); ?>

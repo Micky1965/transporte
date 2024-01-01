@@ -30,9 +30,8 @@ include ('../app/controllers/roles2/listado_roles2.php');
                 <div class="col-md-12">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
-                            <h3 class="card-title"><a href="../reportes/chofereslist.php" class="link"><b>Informe Completo de Choferes</b></a></h3>
+                            <h3 class="card-title"><a href="../reportes/chofereslist.php" class="link"><b>Guardar Lista de Choferes</b></a></h3>
                         </div>
-
                         <div class="card-body" style="display: block;">
                             <table id="table_choferes" class="table table-bordered table-striped">
                                 <thead>
@@ -40,7 +39,8 @@ include ('../app/controllers/roles2/listado_roles2.php');
                                     <th><center>Nro</center></th>
                                     <th><center>Nombre</center></th>
                                     <th><center>Celular</center></th>
-                                    <th><center>Rol del Conductor</center></th>
+                                    <th><center>Dirección</center></th>
+                                    <th><center>Rol</center></th>
                                     <th><center>Acciones</center></th>
                                 </tr>
                                 </thead>
@@ -52,8 +52,15 @@ include ('../app/controllers/roles2/listado_roles2.php');
                                     <tr>
                                         <td><center><?php echo $contador = $contador + 1;?></center></td>
                                         <td><?php echo $choferes_dato['nombre'];?></td>
-                                        <td><?php echo $choferes_dato['celular'];?></td>
+                                        <td>
+                                            <a href="https://wa.me/54<?php echo $choferes_dato['celular'];?>" target="_blank" class="btn btn-success">
+                                                <i class="fas fa-phone"></i>
+                                                <?php echo $choferes_dato['celular'];?>
+                                            </a>
+                                        </td>
+                                        <td><?php echo $choferes_dato['direccion'];?></td>
                                         <td><?php echo $choferes_dato['rol2'];?></td>
+                                        <td><?php echo $choferes_dato['movil'];?></td>
                                         <td>
                                             <center>
                                                 <div class="btn-group">
@@ -111,20 +118,6 @@ include ('../app/controllers/roles2/listado_roles2.php');
             },
             "responsive": true, "lengthChange": true, "autoWidth": false,
             
-            buttons: [{
-                extend: 'collection',
-                text: 'Reportes',
-                orientation: 'landscape',
-                buttons: [
-                {
-                    extend: 'excel'
-                },{
-                    text: 'Imprimir',
-                    extend: 'print'
-                }
-                ]
-            },
-            ],
         }).buttons().container().appendTo('#table_choferes_wrapper .col-md-6:eq(0)');
     });
 </script>

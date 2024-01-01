@@ -2,13 +2,11 @@
 include ('../app/config.php');
 include ('../layout/sesion.php');
 include ('../layout/parte1.php');
-include ('../app/controllers/choferes/listado_choferes.php');
-include ('../app/controllers/roles2/listado_roles2.php');
+include ('../app/controllers/usuarios/listado_usuarios.php');
 
 ?>
 
-<!-- ESTE ARCHIVO FUE CREADO PARA SER VISTO POR EL ROL 2 (operador), "tiene acceso restringido a las ACCIONES"    
-    Content Wrapper. Contains page content -->
+<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -29,13 +27,15 @@ include ('../app/controllers/roles2/listado_roles2.php');
 
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card card-outline card-primary">
-                        <div class="card-header">
-                            <h3 class="card-title">Listado de Choferes</h3> 
+                    <div class="card card-outline card-warning">
+                        <div class="card-header" style="display: flex;">
+                            <h4>Listado de Usuarios</h4>
+                            <div style="width: 30px;"></div> 
+                            <a href="../usuarios/index.php" class="btn btn-info"><b>Volver</b></a>
                         </div>
 
                         <div class="card-body" style="display: block;">
-                            <table id="table_choferes" class="table table-bordered table-striped">
+                            <table id="table_usuarios" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
                                     <th><center>Nro</center></th>
@@ -43,23 +43,21 @@ include ('../app/controllers/roles2/listado_roles2.php');
                                     <th><center>Dni</center></th>
                                     <th><center>Celular</center></th>
                                     <th><center>Dirección</center></th>
-                                    <th><center>Rol del Conductor</center></th>
-                                    <th><center>Observ</center></th>
+                                    <th><center>Rol</center></th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php
                                 $contador = 0;
-                                foreach ($choferes_datos as $choferes_dato){
-                                    $id_chofer = $choferes_dato['id_chofer']; ?>
+                                foreach ($usuarios_datos as $usuarios_dato){
+                                    $id_usuario = $usuarios_dato['id_usuario']; ?>
                                     <tr>
                                         <td><center><?php echo $contador = $contador + 1;?></center></td>
-                                        <td><?php echo $choferes_dato['nombre'];?></td>
-                                        <td><?php echo $choferes_dato['dni'];?></td>
-                                        <td><?php echo $choferes_dato['celular'];?></td>
-                                        <td><?php echo $choferes_dato['direccion'];?></td>
-                                        <td><?php echo $choferes_dato['rol2'];?></td>
-                                        <td><?php echo $choferes_dato['obs'];?></td>
+                                        <td><?php echo $usuarios_dato['nombres'];?></td>
+                                        <td><?php echo $usuarios_dato['dni'];?></td>
+                                        <td><?php echo $usuarios_dato['celular'];?></td>
+                                        <td><?php echo $usuarios_dato['direccion'];?></td>
+                                        <td><?php echo $usuarios_dato['rol'];?></td>
                                     </tr>
                                     <?php
                                 }
@@ -86,18 +84,19 @@ include ('../app/controllers/roles2/listado_roles2.php');
 
 <script>
     $(function () {
-        $("#table_choferes").DataTable({
-            "pageLength": 3,
+        $("#table_usuarios").DataTable({
+            "pageLength": 6,
             "language": {
                 "emptyTable": "No hay información",
-                "info": "Mostrando _START_ a _END_ de _TOTAL_ Choferes",
-                "infoEmpty": "Mostrando 0 a 0 de 0 Choferes",
-                "infoFiltered": "(Filtrado de _MAX_ total Choferes)",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ Usuarios Registrados",
+                "infoEmpty": "Mostrando 0 a 0 de 0 Usuarios",
+                "infoFiltered": "(Filtrado de _MAX_ Usuarios)",
                 "infoPostFix": "",
                 "thousands": ",",
-                "lengthMenu": "Mostrar _MENU_ Choferes",
+                "lengthMenu": "Mostrar _MENU_ Usuarios",
                 "loadingRecords": "Cargando...",
                 "processing": "Procesando...",
+                
                 "search": "Buscador:",
                 "zeroRecords": "Sin resultados encontrados",
                 "paginate": {
@@ -108,17 +107,13 @@ include ('../app/controllers/roles2/listado_roles2.php');
                 }
             },
             "responsive": true, "lengthChange": true, "autoWidth": false,
-            
+
             buttons: [{
                 extend: 'collection',
                 text: 'Reportes',
                 orientation: 'landscape',
-                buttons: [{
-                    text: 'Copiar',
-                    extend: 'copy',
-                }, {
-                    extend: 'pdf'
-                },{
+                buttons: [
+                {
                     extend: 'excel'
                 },{
                     text: 'Imprimir',
@@ -127,6 +122,7 @@ include ('../app/controllers/roles2/listado_roles2.php');
                 ]
             },
             ],
-        }).buttons().container().appendTo('#table_choferes_wrapper .col-md-6:eq(0)');
+            
+        }).buttons().container().appendTo('#table_usuarios_wrapper .col-md-6:eq(0)');
     });
 </script>
